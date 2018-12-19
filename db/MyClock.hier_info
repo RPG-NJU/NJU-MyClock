@@ -1,0 +1,76 @@
+|MyClock
+CLK_50 => CLK_50.IN1
+reset_en => ~NO_FANOUT~
+run_en => run_en.IN1
+clock_clk << FrequencyDivision:change_clk50_to_one_second.clk_output
+
+
+|MyClock|FrequencyDivision:change_clk50_to_one_second
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+en => count.OUTPUTSELECT
+clk_input => clk_output~reg0.CLK
+clk_input => count[0].CLK
+clk_input => count[1].CLK
+clk_input => count[2].CLK
+clk_input => count[3].CLK
+clk_input => count[4].CLK
+clk_input => count[5].CLK
+clk_input => count[6].CLK
+clk_input => count[7].CLK
+clk_input => count[8].CLK
+clk_input => count[9].CLK
+clk_input => count[10].CLK
+clk_input => count[11].CLK
+clk_input => count[12].CLK
+clk_input => count[13].CLK
+clk_input => count[14].CLK
+clk_input => count[15].CLK
+clk_input => count[16].CLK
+clk_input => count[17].CLK
+clk_input => count[18].CLK
+clk_input => count[19].CLK
+clk_input => count[20].CLK
+clk_input => count[21].CLK
+clk_input => count[22].CLK
+clk_input => count[23].CLK
+clk_input => count[24].CLK
+clk_input => count[25].CLK
+clk_input => count[26].CLK
+clk_input => count[27].CLK
+clk_input => count[28].CLK
+clk_input => count[29].CLK
+clk_input => count[30].CLK
+clk_input => count[31].CLK
+clk_output <= clk_output~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
