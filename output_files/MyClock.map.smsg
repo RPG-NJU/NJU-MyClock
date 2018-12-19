@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at FrequencyDivision.v(25): always construct contains both blocking and non-blocking assignments File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/FrequencyDivision.v Line: 25
