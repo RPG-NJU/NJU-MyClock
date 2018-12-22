@@ -11,12 +11,32 @@ module MyClock(
 	input run_en,
 	
 	//output wire test_clk//用于测试输出，输出一个每秒频闪的LED作为测试
-	output wire clock_clk
+	output wire clock_clk,
+	output wire [41:0] all_HEX   //此处是所有需要输出的七段数码管的信息
+								 //便于使用所以没有进行区分0~5号HEX
+								 /*
+								  * [6:0]
+								  * [13:7]
+								  * [20:14]
+								  * [27:21]
+								  * [34:28]
+								  * [41:35]
+								  * 分割如上
+								  */
 	);
-	
-	//wire clock_clk;
-	//assign clock_clk = 0;
-	//reg old_clock;
+
+	wire [5:0] clock_hour;
+	wire [5:0] clock_minute;
+	wire [5:0] clock_second;
+	//需要用来传递时间的wire变量
+
+
+	wire set_time_en; // 用于进行时间设定的使能端
+
+	wire [5:0] hour_trans;
+	wire [5:0] minute_trans;
+	wire [5:0] second_trans;
+	// 用于传递时间的参数，不仅仅是时间设定的，还可以是闹钟设定的
 	
 	initial
 	begin
@@ -33,11 +53,26 @@ module MyClock(
 		//.clk_test(test_clk)
 	);
 	
-	// always @ (clock_clk)//不知道为何，如果在此处写的是CLK_50就会导致灯居然有明暗两种亮法
-	// begin
-	// 	old_clock = clock_clk;
-	// end
-	
-	
-	
+	ClockRun MainClock(
+		//这是主要的时钟程序实例化
+		.one_second_clk(clock_clk),
+		.hour(clock_hour),
+		.minute(clock_minute),
+		.second(clock_second),
+		//上面是主要的时钟驱动的部分，还需要有能够设定时间的部分
+		
+		.set_en(set_time_en),
+		.hour_set(hour_trans),
+		.minute_set(minute_trans),
+		.second_set(second_trans)
+	);
+
+	TimeShow HEXShowTime(
+		.hour(clock_hour),
+		.minute(clock_minute),
+		.second(clock_second),
+
+		.all_hex(all_HEX)
+	);
+
 endmodule

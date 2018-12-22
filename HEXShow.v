@@ -27,6 +27,7 @@ module HEXShow(
 		7:hex_one = 7'b1111000;
 		8:hex_one = 7'b0000000;
 		9:hex_one = 7'b0010000;
+		default:hex_one = 7'b1111111;
 		endcase
 
 		case (data / 10)
@@ -40,6 +41,7 @@ module HEXShow(
 		7:hex_ten = 7'b1111000;
 		8:hex_ten = 7'b0000000;
 		9:hex_ten = 7'b0010000;
+		default:hex_ten = 7'b1111111;
 		endcase
 	end
 

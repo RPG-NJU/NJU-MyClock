@@ -1,0 +1,35 @@
+/*
+ * 该模块如名字所示，用于显示时间在HEX七段数码管上
+ * 通过调用HEXShow来完成部分的显示
+ * 目前没有打算有使能端进行控制
+ */
+
+
+module TimeShow(
+	input [5:0] hour,
+	input [5:0] minute,
+	input [5:0] second,
+
+	output [41:0] all_hex
+	);
+
+	HEXShow hour_show(
+		.data(hour),
+		.hex_one(all_hex[6:0]),
+		.hex_ten(all_hex[13:7])
+	);
+
+	HEXShow minute_show(
+		.data(minute),
+		.hex_one(all_hex[20:8]),
+		.hex_ten(all_hex[27:21])
+	);
+
+	HEXShow second_show(
+		.data(second),
+		.hex_one(all_hex[34:28]),
+		.hex_ten(all_hex[41:35])
+	);
+	
+	
+endmodule
