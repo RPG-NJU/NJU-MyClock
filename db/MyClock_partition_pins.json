@@ -8,11 +8,203 @@
 					"strict" : false
 				},
 				{
+					"name" : "set_time_en",
+					"strict" : false
+				},
+				{
+					"name" : "set_alarm_en",
+					"strict" : false
+				},
+				{
+					"name" : "DONE",
+					"strict" : false
+				},
+				{
+					"name" : "key_trans_en",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[0]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[1]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[2]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[3]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[4]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[5]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[6]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[7]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[8]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[9]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[10]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[11]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[12]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[13]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[14]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[15]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[16]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[17]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[18]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[19]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[20]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[21]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[22]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[23]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[24]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[25]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[26]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[27]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[28]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[29]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[30]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[31]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[32]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[33]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[34]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[35]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[36]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[37]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[38]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[39]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[40]",
+					"strict" : false
+				},
+				{
+					"name" : "all_HEX[41]",
+					"strict" : false
+				},
+				{
 					"name" : "CLK_50",
 					"strict" : false
 				},
 				{
 					"name" : "run_en",
+					"strict" : false
+				},
+				{
+					"name" : "ps2_data",
+					"strict" : false
+				},
+				{
+					"name" : "ps2_clk",
 					"strict" : false
 				}
 			]
