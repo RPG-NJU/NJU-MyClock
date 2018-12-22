@@ -6,13 +6,48 @@
 
 
 module TimeShow(
-	input [5:0] hour,
-	input [5:0] minute,
-	input [5:0] second,
+	input [5:0] hour__,
+	input [5:0] minute__,
+	input [5:0] second__,
+
+	input [5:0] hour_,
+	input [5:0] minute_,
+	input [5:0] second_,
+
+	input set_en,
+	input alarm_en,
 
 	output [41:0] all_hex
 	);
 
+
+	reg [5:0] second;
+	reg [5:0] minute;
+	reg [5:0] hour;
+
+	initial
+	begin
+		second = 8'b0;
+		minute = 8'b0;
+		hour = 8'b0;
+	end
+
+	always @ (*)
+	begin
+		if (set_en == 1'b1 || alarm_en == 1'b1)
+		begin
+			second = second_;
+			minute = minute_;
+			hour = hour_;
+		end
+
+		else 
+		begin
+			second = second__;
+			minute = minute__;
+			hour = hour__;
+		end
+	end
 	HEXShow second_show(
 		.data(second),
 		.hex_one(all_hex[6:0]),

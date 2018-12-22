@@ -1,0 +1,40 @@
+module KeyTranslate(
+	input ready,
+	input [7:0] now_data,
+	
+
+	output reg out_en,// 用来标识是否准备好这按键
+	output reg [7:0] ASCII
+	);
+	
+	reg [7:0] last_data;
+	reg [7:0] ASCII_MEMORY [255:0];//键码对应的ASCII码
+	
+	initial//初始化ASCII码存储器
+	begin
+		$readmemh( "ASCII.txt", ASCII_MEMORY, 0, 255);
+		last_data = 8'b0;
+		out_en = 1'b0;
+	end
+
+	always @ (*)
+	begin
+		if (ready)
+		begin
+			if (last_data == 8'hF0) // 如果前一个是断码
+			begin
+				out_en = 1'b0;
+				last_data = now_data;
+				
+			end
+
+			else if (now_data == 8'hF0)
+			begin
+				out_en = 1'b1; // 抬起的那一瞬间，判定为有效的
+				ASCII = ASCII_MEMORY[last_data];
+				last_data = now_data;
+			end
+		end
+	end
+
+endmodule
