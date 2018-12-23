@@ -1,7 +1,7 @@
 module KeyTranslate(
 	input ready,
 	input [7:0] now_data,
-	
+	input CLK_50,
 
 	output reg out_en,// 用来标识是否准备好这按键
 	output reg [7:0] ASCII
@@ -17,7 +17,7 @@ module KeyTranslate(
 		out_en = 1'b0;
 	end
 
-	always @ (*)
+	always @ (posedge CLK_50)
 	begin
 		if (ready)
 		begin
@@ -25,10 +25,10 @@ module KeyTranslate(
 			begin
 				out_en = 1'b0;
 				last_data = now_data;
-				ASCII = 8'b0;
+				//ASCII = 8'b0;
 			end
 
-			else if (now_data == 8'hF0)
+			else if (now_data[7:0] == 8'hF0)
 			begin
 				out_en = 1'b0; // 抬起的那一瞬间，判定为无效的
 				last_data = now_data;
@@ -43,12 +43,12 @@ module KeyTranslate(
 			end
 		end
 
-		// else
-		// begin
-		// 	//out_en = out_en;
-		// 	last_data = last_data;
-		// 	ASCII = 8'b0;
-		// end
+		else
+		begin
+			//out_en = out_en;
+			//last_data = last_data;
+			//ASCII = 8'b0;
+		end
 	end
 
 endmodule

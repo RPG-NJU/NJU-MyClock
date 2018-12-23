@@ -42,9 +42,9 @@ module ClockRun(
 	begin
 		if (set_en == 1'b1) // 进行时间的设定
 		begin
-			hour = hour_set;
-			minute = minute_set;
-			second = second_set;
+			hour <= hour_set;
+			minute <= minute_set;
+			second <= second_set;
 			//set = 1'b0;
 		end
 
@@ -52,21 +52,21 @@ module ClockRun(
 		begin
 			if (second >= 6'd59)
 			begin
-				second = 6'b0;
-				minute = minute + 1'b1;
+				second <= 6'b0;
+				minute <= minute + 1'b1;
 			end
 			else
-				second = second + 1'b1;
+				second <= second + 1'b1;
 			
 			if (minute >= 6'd59 && second >= 6'd59)
 			begin
-				minute = 6'b0;
-				hour = hour + 1'b1;
+				minute <= 6'b0;
+				hour <= hour + 1'b1;
 			end
 
 			if (hour >= 6'd23 && minute >= 6'd59 && second >= 6'd59)
 			begin
-				hour = 6'b0;
+				hour <= 6'b0;
 			end
 		end
 	end

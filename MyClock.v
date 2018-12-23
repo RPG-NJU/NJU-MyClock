@@ -18,6 +18,7 @@ module MyClock(
 	output wire set_time_en, // 用于进行时间设定的使能端
 	output wire set_alarm_en, // 同理
 	output wire DONE, // D的敲击显示
+	output wire key_trans_en,
 	//output wire [7:0] ASCII_show, // 用于DEBUG，马上就会删除
 
 	output wire [41:0] all_HEX   //此处是所有需要输出的七段数码管的信息
@@ -100,6 +101,8 @@ module MyClock(
 		.set_en(set_time_en),
 		.alarm_en(set_alarm_en),
 		//.ready(keyboard_ready)
+
+		.trans_en(key_trans_en),
 
 		.hour(hour_trans),
 		.minute(minute_trans),
