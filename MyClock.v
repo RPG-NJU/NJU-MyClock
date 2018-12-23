@@ -19,6 +19,7 @@ module MyClock(
 	output wire set_alarm_en, // 同理
 	output wire DONE, // D的敲击显示
 	output wire key_trans_en,
+	output wire AlarmLED, // 用于测试输出Alarm信息
 	//output wire [7:0] ASCII_show, // 用于DEBUG，马上就会删除
 
 	output wire [41:0] all_HEX   //此处是所有需要输出的七段数码管的信息
@@ -109,6 +110,20 @@ module MyClock(
 		.second(second_trans),
 		.all_ready(DONE)
 		//.ASCII(ASCII_show)
+	);
+
+	AlarmRun Alarm(
+		.hour_set(hour_trans),
+		.minute_set(minute_trans),
+		.second_set(second_trans),
+		.hour(clock_hour),
+		.minute(clock_minute),
+		.second(clock_second),
+
+		.alarm_set(set_alarm_en),
+		.one_second_clk(clock_clk),
+
+		.LEDAlarm(AlarmLED)
 	);
 
 endmodule

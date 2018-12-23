@@ -34,27 +34,13 @@ module AlarmRun(
 	begin
 		if (alarm_set == 1'b1) // 此时是需要设定闹钟的时候
 		begin
-			alarm_hour = hour_set;
-			alarm_minute = minute_set;
-			alarm_second = second_set;
+			alarm_hour <= hour_set;
+			alarm_minute <= minnte_set;
+			alarm_second <= second_set;
 		end
 
-		else if (hour == alarm_hour && minute == alarm_minute && second == alarm_second)
-		// 此时是闹钟设定的时间
-		begin
-			count = 3'b1; // count加一进行计数
-			LEDAlarm = 1'b1;
-		end
-
-		else if (count != 3'b0)
-		begin
-			count = count + 1;
-			//LEDAlarm <= 1'b1;
-		end
-
-		else if (count == 1'b0)
-		begin
-			LEDAlarm = 1'b0;
+		else
+			
 		end
 	end
 
