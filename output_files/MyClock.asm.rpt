@@ -1,5 +1,5 @@
 Assembler report for MyClock
-Sun Dec 23 15:44:42 2018
+Sun Dec 23 21:29:45 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Dec 23 15:44:42 2018 ;
+; Assembler Status      ; Successful - Sun Dec 23 21:29:45 2018 ;
 ; Revision Name         ; MyClock                               ;
 ; Top-level Entity Name ; MyClock                               ;
 ; Family                ; Cyclone V                             ;
@@ -66,8 +66,8 @@ refer to the applicable agreement for further details.
 +----------------+-----------------------------------------------------------------------------------------------------+
 ; Option         ; Setting                                                                                             ;
 +----------------+-----------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00C5D85D                                                                                          ;
-; Checksum       ; 0x00C5D85D                                                                                          ;
+; JTAG usercode  ; 0x01172837                                                                                          ;
+; Checksum       ; 0x01172837                                                                                          ;
 +----------------+-----------------------------------------------------------------------------------------------------+
 
 
@@ -77,14 +77,14 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Dec 23 15:44:32 2018
+    Info: Processing started: Sun Dec 23 21:29:32 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off MyClock -c MyClock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4863 megabytes
-    Info: Processing ended: Sun Dec 23 15:44:42 2018
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:09
+    Info: Peak virtual memory: 4925 megabytes
+    Info: Processing ended: Sun Dec 23 21:29:45 2018
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:11
 
 

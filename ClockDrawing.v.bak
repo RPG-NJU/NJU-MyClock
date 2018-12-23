@@ -1,0 +1,59 @@
+module ClockDrawing(
+	input [5:0] hour,
+	input [5:0] minute,
+	input [5:0] second,
+
+
+	input clk, // 50MHz
+	//input clkin,
+	input rst,
+	//input clken,
+	input reset,
+	
+	output hsync, // 行同步和列同步信号
+	output vsync,
+	output valid, // 消隐信号
+	
+	output vga_clk,
+	
+	output sync_n,
+	
+	output [7:0] vga_r, // 红绿蓝颜色信号
+	output [7:0] vga_g,
+	output [7:0] vga_b//都更改为4bits表示
+	);
+	
+
+	
+	wire [9:0] v_addr;
+	wire [9:0] h_addr;
+	
+	wire [11:0] data_trans;
+	assign sync_n = 0;
+	clkgen #(25000000) clkgen_fuction(
+		.clkin(clk),
+		.rst(rst),
+		.clken(1'b1),
+		.clkout(vga_clk)
+		);
+		
+	// picture_rom rom(
+	// 	.address({h_addr[9:0],v_addr[8:0]}),
+	// 	.clock(clk),
+	// 	.q(data_trans)
+	// 	);
+		
+	vga_ctrl vga(
+		.pclk(vga_clk),
+		.reset(reset),
+		.vga_data(data_trans),
+		.h_addr(h_addr),
+		.v_addr(v_addr),
+		.hsync(hsync),
+		.vsync(vsync),
+		.valid(valid),
+		.vga_r(vga_r),
+		.vga_b(vga_b),
+		.vga_g(vga_g)
+		);
+endmodule

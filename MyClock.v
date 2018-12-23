@@ -23,6 +23,8 @@ module MyClock(
 
 	output wire [3:0] LEDR, // 这个标准的四个输出是给移植而来的音频实验使用的，个人毫无意义
 	//output wire [7:0] ASCII_show, // 用于DEBUG，马上就会删除
+	output wire LAST,
+	// 这是最后一个LED测试开关了
 
 	output wire [41:0] all_HEX,   //此处是所有需要输出的七段数码管的信息
 								 //便于使用所以没有进行区分0~5号HEX
@@ -44,7 +46,21 @@ module MyClock(
 	output		          		AUD_XCK, // 音频实验所需要的大量引脚
 
 	output		          		FPGA_I2C_SCLK,
-	inout 		          		FPGA_I2C_SDAT
+	inout 		          		FPGA_I2C_SDAT,
+
+
+	// VGA部分
+	output hsync, // 行同步和列同步信号
+	output vsync,
+	output valid, // 消隐信号
+	
+	output vga_clk,
+	
+	output sync_n,
+	
+	output [7:0] vga_r, // 红绿蓝颜色信号
+	output [7:0] vga_g,
+	output [7:0] vga_b//都更改为4bits表示
 
 	);
 
@@ -144,6 +160,28 @@ module MyClock(
 		.AUD_XCK(AUD_XCK),
 		.FPGA_I2C_SCLK(FPGA_I2C_SCLK),
 		.FPGA_I2C_SDAT(FPGA_I2C_SDAT)
+	);
+
+
+	ClockDrawing VGADrawing(
+		.hour(clock_hour),
+		.minute(clock_minute),
+		.second(clock_second),
+
+		.clk(CLK_50),
+		.rst(1'b0),
+		.reset(1'b0),
+		.hsync(hsync),
+		.vsync(vsync),
+		.valid(valid),
+
+		.sync_n(sync_n),
+		.vga_clk(vga_clk),
+
+		.vga_r(vga_r),
+		.vga_g(vga_g),
+		.vga_b(vga_b),
+		.test(LAST)
 	);
 
 endmodule

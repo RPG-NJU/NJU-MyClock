@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sun Dec 23 15:43:25 2018
+Analysis & Synthesis Status : Successful - Sun Dec 23 21:27:38 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : MyClock
 Top-level Entity Name : MyClock
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 263
-Total pins : 63
+Total registers : 316
+Total pins : 93
 Total virtual pins : 0
 Total block memory bits : 16,448
-Total DSP Blocks : 0
+Total DSP Blocks : 112
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

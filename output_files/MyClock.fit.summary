@@ -1,17 +1,17 @@
-Fitter Status : Successful - Sun Dec 23 15:44:30 2018
+Fitter Status : Successful - Sun Dec 23 21:29:28 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : MyClock
 Top-level Entity Name : MyClock
 Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 335 / 41,910 ( < 1 % )
-Total registers : 282
-Total pins : 63 / 499 ( 13 % )
+Logic utilization (in ALMs) : 2,448 / 41,910 ( 6 % )
+Total registers : 338
+Total pins : 93 / 499 ( 19 % )
 Total virtual pins : 0
 Total block memory bits : 16,448 / 5,662,720 ( < 1 % )
 Total RAM Blocks : 3 / 553 ( < 1 % )
-Total DSP Blocks : 0 / 112 ( 0 % )
+Total DSP Blocks : 112 / 112 ( 100 % )
 Total HSSI RX PCSs : 0 / 9 ( 0 % )
 Total HSSI PMA RX Deserializers : 0 / 9 ( 0 % )
 Total HSSI TX PCSs : 0 / 9 ( 0 % )
