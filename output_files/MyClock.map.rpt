@@ -1,5 +1,5 @@
-Analysis & Elaboration report for MyClock
-Wed Dec 19 12:03:36 2018
+Analysis & Synthesis report for MyClock
+Sun Dec 23 15:43:25 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -7,11 +7,43 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
-  6. Analysis & Elaboration Suppressed Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |MyClock|AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_state
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Registers Packed Into Inferred Megafunctions
+ 16. Registers Added for RAM Pass-Through Logic
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Source assignments for AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave|altsyncram:sintable_rtl_0|altsyncram_jta1:auto_generated
+ 19. Source assignments for KeyTimeGet:GetTime|ps2_keyboard:keyboard|altsyncram:fifo_rtl_0|altsyncram_lsj1:auto_generated
+ 20. Parameter Settings for User Entity Instance: AlarmRun:Alarm|sound_sample:Sound|audio_clk:u1|audio_clk_0002:audio_clk_inst|altera_pll:altera_pll_i
+ 21. Parameter Settings for User Entity Instance: AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk
+ 22. Parameter Settings for User Entity Instance: AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig
+ 23. Parameter Settings for Inferred Entity Instance: AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave|altsyncram:sintable_rtl_0
+ 24. Parameter Settings for Inferred Entity Instance: KeyTimeGet:GetTime|ps2_keyboard:keyboard|altsyncram:fifo_rtl_0
+ 25. Parameter Settings for Inferred Entity Instance: TimeShow:HEXShowTime|HEXShow:second_show|lpm_divide:Mod0
+ 26. Parameter Settings for Inferred Entity Instance: TimeShow:HEXShowTime|HEXShow:minute_show|lpm_divide:Mod0
+ 27. Parameter Settings for Inferred Entity Instance: TimeShow:HEXShowTime|HEXShow:hour_show|lpm_divide:Mod0
+ 28. altsyncram Parameter Settings by Entity Instance
+ 29. Port Connectivity Checks: "AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave"
+ 30. Port Connectivity Checks: "AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio"
+ 31. Port Connectivity Checks: "AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0"
+ 32. Port Connectivity Checks: "AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig"
+ 33. Port Connectivity Checks: "AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk"
+ 34. Port Connectivity Checks: "KeyTimeGet:GetTime|ps2_keyboard:keyboard"
+ 35. Post-Synthesis Netlist Statistics for Top Partition
+ 36. Elapsed Time Per Partition
+ 37. Analysis & Synthesis Messages
+ 38. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -34,42 +66,31 @@ refer to the applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                              ;
-+-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Wed Dec 19 12:03:36 2018       ;
-; Quartus Prime Version         ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
-; Revision Name                 ; MyClock                                     ;
-; Top-level Entity Name         ; MyClock                                     ;
-; Family                        ; Cyclone V                                   ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
-; Total registers               ; N/A until Partition Merge                   ;
-; Total pins                    ; N/A until Partition Merge                   ;
-; Total virtual pins            ; N/A until Partition Merge                   ;
-; Total block memory bits       ; N/A until Partition Merge                   ;
-; Total PLLs                    ; N/A until Partition Merge                   ;
-; Total DLLs                    ; N/A until Partition Merge                   ;
-+-------------------------------+---------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Dec 23 15:43:25 2018       ;
+; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                   ; MyClock                                     ;
+; Top-level Entity Name           ; MyClock                                     ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 263                                         ;
+; Total pins                      ; 63                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 16,448                                      ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 1                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                           ;
+; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -155,16 +176,941 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                       ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                       ; Library   ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------+
+; audio_clk.v                      ; yes             ; User Wizard-Generated File             ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/audio_clk.v                                      ; audio_clk ;
+; audio_clk/audio_clk_0002.v       ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/audio_clk/audio_clk_0002.v                       ; audio_clk ;
+; MyClock.v                        ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/MyClock.v                                        ;           ;
+; FrequencyDivision.v              ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/FrequencyDivision.v                              ;           ;
+; HEXShow.v                        ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/HEXShow.v                                        ;           ;
+; ClockRun.v                       ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v                                       ;           ;
+; TimeShow.v                       ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/TimeShow.v                                       ;           ;
+; ps2_keyboard.v                   ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ps2_keyboard.v                                   ;           ;
+; KeyTimeGet.v                     ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTimeGet.v                                     ;           ;
+; KeyTranslate.v                   ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTranslate.v                                   ;           ;
+; AlarmRun.v                       ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/AlarmRun.v                                       ;           ;
+; sound_sample.v                   ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/sound_sample.v                                   ;           ;
+; Sin_Generator.v                  ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/Sin_Generator.v                                  ;           ;
+; I2C_Audio_Config.v               ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Audio_Config.v                               ;           ;
+; I2C_Controller.v                 ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Controller.v                                 ;           ;
+; clkgen.v                         ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/clkgen.v                                         ;           ;
+; I2S_Audio.v                      ; yes             ; User Verilog HDL File                  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2S_Audio.v                                      ;           ;
+; ascii.txt                        ; yes             ; Auto-Found File                        ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ascii.txt                                        ;           ;
+; altera_pll.v                     ; yes             ; Megafunction                           ; d:/study/experiments_in_digital_logical_circuits/environment/quartus/libraries/megafunctions/altera_pll.v          ;           ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; d:/study/experiments_in_digital_logical_circuits/environment/quartus/libraries/megafunctions/altsyncram.tdf        ;           ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; d:/study/experiments_in_digital_logical_circuits/environment/quartus/libraries/megafunctions/stratix_ram_block.inc ;           ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; d:/study/experiments_in_digital_logical_circuits/environment/quartus/libraries/megafunctions/lpm_mux.inc           ;           ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; d:/study/experiments_in_digital_logical_circuits/environment/quartus/libraries/megafunctions/lpm_decode.inc        ;           ;
+; aglobal171.inc                   ; yes             ; Megafunction                           ; d:/study/experiments_in_digital_logical_circuits/environment/quartus/libraries/megafunctions/aglobal171.inc        ;           ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; d:/study/experiments_in_digital_logical_circuits/environment/quartus/libraries/megafunctions/a_rdenreg.inc         ;           ;
+; altrom.inc                       ; yes             ; Megafunction                           ; d:/study/experiments_in_digital_logical_circuits/environment/quartus/libraries/megafunctions/altrom.inc            ;           ;
+; altram.inc                       ; yes             ; Megafunction                           ; d:/study/experiments_in_digital_logical_circuits/environment/quartus/libraries/megafunctions/altram.inc            ;           ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; d:/study/experiments_in_digital_logical_circuits/environment/quartus/libraries/megafunctions/altdpram.inc          ;           ;
+; db/altsyncram_jta1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/db/altsyncram_jta1.tdf                           ;           ;
+; sintable.mif                     ; yes             ; Auto-Found Memory Initialization File  ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/sintable.mif                                     ;           ;
+; db/altsyncram_lsj1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/db/altsyncram_lsj1.tdf                           ;           ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                           ; d:/study/experiments_in_digital_logical_circuits/environment/quartus/libraries/megafunctions/lpm_divide.tdf        ;           ;
+; abs_divider.inc                  ; yes             ; Megafunction                           ; d:/study/experiments_in_digital_logical_circuits/environment/quartus/libraries/megafunctions/abs_divider.inc       ;           ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                           ; d:/study/experiments_in_digital_logical_circuits/environment/quartus/libraries/megafunctions/sign_div_unsign.inc   ;           ;
+; db/lpm_divide_62m.tdf            ; yes             ; Auto-Generated Megafunction            ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/db/lpm_divide_62m.tdf                            ;           ;
+; db/sign_div_unsign_9kh.tdf       ; yes             ; Auto-Generated Megafunction            ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/db/sign_div_unsign_9kh.tdf                       ;           ;
+; db/alt_u_div_ose.tdf             ; yes             ; Auto-Generated Megafunction            ; D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/db/alt_u_div_ose.tdf                             ;           ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimate of Logic utilization (ALMs needed) ; 330          ;
+;                                             ;              ;
+; Combinational ALUT usage for logic          ; 588          ;
+;     -- 7 input functions                    ; 7            ;
+;     -- 6 input functions                    ; 60           ;
+;     -- 5 input functions                    ; 97           ;
+;     -- 4 input functions                    ; 129          ;
+;     -- <=3 input functions                  ; 295          ;
+;                                             ;              ;
+; Dedicated logic registers                   ; 263          ;
+;                                             ;              ;
+; I/O pins                                    ; 63           ;
+; Total MLAB memory bits                      ; 0            ;
+; Total block memory bits                     ; 16448        ;
+;                                             ;              ;
+; Total DSP Blocks                            ; 0            ;
+;                                             ;              ;
+; Total PLLs                                  ; 1            ;
+;     -- PLLs                                 ; 1            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; CLK_50~input ;
+; Maximum fan-out                             ; 140          ;
+; Total fan-out                               ; 3315         ;
+; Average fan-out                             ; 3.30         ;
++---------------------------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                 ;
++---------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                               ; Entity Name         ; Library Name ;
++---------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |MyClock                                          ; 588 (0)             ; 263 (0)                   ; 16448             ; 0          ; 63   ; 0            ; |MyClock                                                                                                                                          ; MyClock             ; work         ;
+;    |AlarmRun:Alarm|                               ; 146 (11)            ; 134 (22)                  ; 16384             ; 0          ; 0    ; 0            ; |MyClock|AlarmRun:Alarm                                                                                                                           ; AlarmRun            ; work         ;
+;       |sound_sample:Sound|                        ; 135 (10)            ; 112 (10)                  ; 16384             ; 0          ; 0    ; 0            ; |MyClock|AlarmRun:Alarm|sound_sample:Sound                                                                                                        ; sound_sample        ; work         ;
+;          |I2C_Audio_Config:myconfig|              ; 42 (19)             ; 36 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |MyClock|AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig                                                                              ; I2C_Audio_Config    ; work         ;
+;             |I2C_Controller:u0|                   ; 23 (23)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |MyClock|AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0                                                            ; I2C_Controller      ; work         ;
+;          |I2S_Audio:myaudio|                      ; 27 (27)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |MyClock|AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio                                                                                      ; I2S_Audio           ; work         ;
+;          |Sin_Generator:sin_wave|                 ; 15 (15)             ; 15 (15)                   ; 16384             ; 0          ; 0    ; 0            ; |MyClock|AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave                                                                                 ; Sin_Generator       ; work         ;
+;             |altsyncram:sintable_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |MyClock|AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave|altsyncram:sintable_rtl_0                                                       ; altsyncram          ; work         ;
+;                |altsyncram_jta1:auto_generated|   ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |MyClock|AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave|altsyncram:sintable_rtl_0|altsyncram_jta1:auto_generated                        ; altsyncram_jta1     ; work         ;
+;          |audio_clk:u1|                           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|AlarmRun:Alarm|sound_sample:Sound|audio_clk:u1                                                                                           ; audio_clk           ; audio_clk    ;
+;             |audio_clk_0002:audio_clk_inst|       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|AlarmRun:Alarm|sound_sample:Sound|audio_clk:u1|audio_clk_0002:audio_clk_inst                                                             ; audio_clk_0002      ; audio_clk    ;
+;                |altera_pll:altera_pll_i|          ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|AlarmRun:Alarm|sound_sample:Sound|audio_clk:u1|audio_clk_0002:audio_clk_inst|altera_pll:altera_pll_i                                     ; altera_pll          ; work         ;
+;          |clkgen:my_i2c_clk|                      ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |MyClock|AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk                                                                                      ; clkgen              ; work         ;
+;    |ClockRun:MainClock|                           ; 74 (74)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |MyClock|ClockRun:MainClock                                                                                                                       ; ClockRun            ; work         ;
+;    |FrequencyDivision:change_clk50_to_one_second| ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |MyClock|FrequencyDivision:change_clk50_to_one_second                                                                                             ; FrequencyDivision   ; work         ;
+;    |KeyTimeGet:GetTime|                           ; 147 (55)            ; 78 (23)                   ; 64                ; 0          ; 0    ; 0            ; |MyClock|KeyTimeGet:GetTime                                                                                                                       ; KeyTimeGet          ; work         ;
+;       |KeyTranslate:GetASCII|                     ; 46 (46)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |MyClock|KeyTimeGet:GetTime|KeyTranslate:GetASCII                                                                                                 ; KeyTranslate        ; work         ;
+;       |ps2_keyboard:keyboard|                     ; 46 (46)             ; 39 (39)                   ; 64                ; 0          ; 0    ; 0            ; |MyClock|KeyTimeGet:GetTime|ps2_keyboard:keyboard                                                                                                 ; ps2_keyboard        ; work         ;
+;          |altsyncram:fifo_rtl_0|                  ; 0 (0)               ; 0 (0)                     ; 64                ; 0          ; 0    ; 0            ; |MyClock|KeyTimeGet:GetTime|ps2_keyboard:keyboard|altsyncram:fifo_rtl_0                                                                           ; altsyncram          ; work         ;
+;             |altsyncram_lsj1:auto_generated|      ; 0 (0)               ; 0 (0)                     ; 64                ; 0          ; 0    ; 0            ; |MyClock|KeyTimeGet:GetTime|ps2_keyboard:keyboard|altsyncram:fifo_rtl_0|altsyncram_lsj1:auto_generated                                            ; altsyncram_lsj1     ; work         ;
+;    |TimeShow:HEXShowTime|                         ; 180 (18)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime                                                                                                                     ; TimeShow            ; work         ;
+;       |HEXShow:hour_show|                         ; 54 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime|HEXShow:hour_show                                                                                                   ; HEXShow             ; work         ;
+;          |lpm_divide:Mod0|                        ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime|HEXShow:hour_show|lpm_divide:Mod0                                                                                   ; lpm_divide          ; work         ;
+;             |lpm_divide_62m:auto_generated|       ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime|HEXShow:hour_show|lpm_divide:Mod0|lpm_divide_62m:auto_generated                                                     ; lpm_divide_62m      ; work         ;
+;                |sign_div_unsign_9kh:divider|      ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime|HEXShow:hour_show|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider                         ; sign_div_unsign_9kh ; work         ;
+;                   |alt_u_div_ose:divider|         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime|HEXShow:hour_show|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider   ; alt_u_div_ose       ; work         ;
+;       |HEXShow:minute_show|                       ; 54 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime|HEXShow:minute_show                                                                                                 ; HEXShow             ; work         ;
+;          |lpm_divide:Mod0|                        ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime|HEXShow:minute_show|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_62m:auto_generated|       ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime|HEXShow:minute_show|lpm_divide:Mod0|lpm_divide_62m:auto_generated                                                   ; lpm_divide_62m      ; work         ;
+;                |sign_div_unsign_9kh:divider|      ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime|HEXShow:minute_show|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
+;                   |alt_u_div_ose:divider|         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime|HEXShow:minute_show|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider ; alt_u_div_ose       ; work         ;
+;       |HEXShow:second_show|                       ; 54 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime|HEXShow:second_show                                                                                                 ; HEXShow             ; work         ;
+;          |lpm_divide:Mod0|                        ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime|HEXShow:second_show|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_62m:auto_generated|       ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime|HEXShow:second_show|lpm_divide:Mod0|lpm_divide_62m:auto_generated                                                   ; lpm_divide_62m      ; work         ;
+;                |sign_div_unsign_9kh:divider|      ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime|HEXShow:second_show|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
+;                   |alt_u_div_ose:divider|         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MyClock|TimeShow:HEXShowTime|HEXShow:second_show|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider ; alt_u_div_ose       ; work         ;
++---------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                          ;
++------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+--------------+
+; Name                                                                                                                         ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF          ;
++------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+--------------+
+; AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave|altsyncram:sintable_rtl_0|altsyncram_jta1:auto_generated|ALTSYNCRAM ; AUTO ; ROM              ; 1024         ; 16           ; --           ; --           ; 16384 ; sintable.mif ;
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|altsyncram:fifo_rtl_0|altsyncram_lsj1:auto_generated|ALTSYNCRAM                     ; AUTO ; Simple Dual Port ; 8            ; 8            ; 8            ; 8            ; 64    ; None         ;
++------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                     ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                         ; IP Include File ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------------------+-----------------+
+; Altera ; altera_pll   ; 17.1    ; N/A          ; N/A          ; |MyClock|AlarmRun:Alarm|sound_sample:Sound|audio_clk:u1 ; audio_clk.v     ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------+
+; State Machine - |MyClock|AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_state ;
++---------------+---------------+---------------+---------------+---------------------------------+
+; Name          ; mi2c_state.11 ; mi2c_state.10 ; mi2c_state.01 ; mi2c_state.00                   ;
++---------------+---------------+---------------+---------------+---------------------------------+
+; mi2c_state.00 ; 0             ; 0             ; 0             ; 0                               ;
+; mi2c_state.01 ; 0             ; 0             ; 1             ; 1                               ;
+; mi2c_state.10 ; 0             ; 1             ; 0             ; 1                               ;
+; mi2c_state.11 ; 1             ; 0             ; 0             ; 1                               ;
++---------------+---------------+---------------+---------------+---------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                             ;
++---------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+; Register name                                                                               ; Reason for Removal                                                                               ;
++---------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+; AlarmRun:Alarm|sound_sample:Sound|freq[0,11..15]                                            ; Stuck at GND due to stuck port data_in                                                           ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[22,23]                ; Stuck at GND due to stuck port data_in                                                           ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[20,21]                ; Stuck at VCC due to stuck port data_in                                                           ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[19]                   ; Stuck at GND due to stuck port data_in                                                           ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[18]                   ; Stuck at VCC due to stuck port data_in                                                           ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[16,17]                ; Stuck at GND due to stuck port data_in                                                           ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[22,23]     ; Stuck at GND due to stuck port data_in                                                           ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[20,21]     ; Stuck at VCC due to stuck port data_in                                                           ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[19]        ; Stuck at GND due to stuck port data_in                                                           ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[18]        ; Stuck at VCC due to stuck port data_in                                                           ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[16,17]     ; Stuck at GND due to stuck port data_in                                                           ;
+; AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave|freq_counter[0]                    ; Stuck at GND due to stuck port data_in                                                           ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[7,8,13,14]            ; Merged with AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[15]            ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[3,5]                  ; Merged with AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[6]             ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[7,8,13,14] ; Merged with AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[15] ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[3,5]       ; Merged with AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[6]  ;
+; KeyTimeGet:GetTime|KeyTranslate:GetASCII|ASCII[7]                                           ; Stuck at GND due to stuck port data_in                                                           ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[15]                   ; Stuck at GND due to stuck port data_in                                                           ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[15]        ; Stuck at GND due to stuck port data_in                                                           ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_state~8                    ; Lost fanout                                                                                      ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_state~9                    ; Lost fanout                                                                                      ;
+; Total Number of Removed Registers = 40                                                      ;                                                                                                  ;
++---------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                  ;
++---------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+; Register name                                                             ; Reason for Removal        ; Registers Removed due to This Register                                               ;
++---------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[23] ; Stuck at GND              ; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[23] ;
+;                                                                           ; due to stuck port data_in ;                                                                                      ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[22] ; Stuck at GND              ; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[22] ;
+;                                                                           ; due to stuck port data_in ;                                                                                      ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[21] ; Stuck at VCC              ; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[21] ;
+;                                                                           ; due to stuck port data_in ;                                                                                      ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[20] ; Stuck at VCC              ; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[20] ;
+;                                                                           ; due to stuck port data_in ;                                                                                      ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[19] ; Stuck at GND              ; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[19] ;
+;                                                                           ; due to stuck port data_in ;                                                                                      ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[18] ; Stuck at VCC              ; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[18] ;
+;                                                                           ; due to stuck port data_in ;                                                                                      ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[17] ; Stuck at GND              ; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[17] ;
+;                                                                           ; due to stuck port data_in ;                                                                                      ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[16] ; Stuck at GND              ; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[16] ;
+;                                                                           ; due to stuck port data_in ;                                                                                      ;
+; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|mi2c_data[15] ; Stuck at GND              ; AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD[15] ;
+;                                                                           ; due to stuck port data_in ;                                                                                      ;
++---------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 263   ;
+; Number of registers using Synchronous Clear  ; 95    ;
+; Number of registers using Synchronous Load   ; 15    ;
+; Number of registers using Asynchronous Clear ; 18    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 130   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------+
+; Inverted Register Statistics                                    ;
++-------------------------------------------------------+---------+
+; Inverted Register                                     ; Fan out ;
++-------------------------------------------------------+---------+
+; KeyTimeGet:GetTime|KeyTranslate:GetASCII|last_data[4] ; 1       ;
+; KeyTimeGet:GetTime|KeyTranslate:GetASCII|last_data[5] ; 1       ;
+; KeyTimeGet:GetTime|KeyTranslate:GetASCII|last_data[6] ; 1       ;
+; KeyTimeGet:GetTime|KeyTranslate:GetASCII|last_data[7] ; 1       ;
+; Total number of inverted registers = 4                ;         ;
++-------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                                                             ;
++-------------------------------------------------------------------------+-------------------------------------------------------------------------+------+
+; Register Name                                                           ; Megafunction                                                            ; Type ;
++-------------------------------------------------------------------------+-------------------------------------------------------------------------+------+
+; AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave|dataout[0..15] ; AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave|sintable_rtl_0 ; RAM  ;
++-------------------------------------------------------------------------+-------------------------------------------------------------------------+------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                                                           ;
++----------------------------------------------------------------+-----------------------------------------------------+
+; Register Name                                                  ; RAM Name                                            ;
++----------------------------------------------------------------+-----------------------------------------------------+
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0_bypass[0]  ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0 ;
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0_bypass[1]  ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0 ;
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0_bypass[2]  ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0 ;
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0_bypass[3]  ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0 ;
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0_bypass[4]  ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0 ;
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0_bypass[5]  ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0 ;
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0_bypass[6]  ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0 ;
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0_bypass[7]  ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0 ;
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0_bypass[8]  ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0 ;
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0_bypass[9]  ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0 ;
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0_bypass[10] ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0 ;
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0_bypass[11] ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0 ;
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0_bypass[12] ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0 ;
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0_bypass[13] ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0 ;
+; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0_bypass[14] ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0 ;
++----------------------------------------------------------------+-----------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |MyClock|AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0|SD_COUNTER[5] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |MyClock|FrequencyDivision:change_clk50_to_one_second|count[18]                                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MyClock|AlarmRun:Alarm|count[2]                                                                     ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |MyClock|KeyTimeGet:GetTime|location[1]                                                              ;
+; 10:1               ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |MyClock|KeyTimeGet:GetTime|second[5]                                                                ;
+; 10:1               ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |MyClock|KeyTimeGet:GetTime|minute[1]                                                                ;
+; 10:1               ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |MyClock|KeyTimeGet:GetTime|hour[2]                                                                  ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |MyClock|ClockRun:MainClock|minute[1]                                                                ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |MyClock|ClockRun:MainClock|hour[5]                                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |MyClock|AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|Selector0                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave|altsyncram:sintable_rtl_0|altsyncram_jta1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                         ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                          ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for KeyTimeGet:GetTime|ps2_keyboard:keyboard|altsyncram:fifo_rtl_0|altsyncram_lsj1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                     ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                      ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: AlarmRun:Alarm|sound_sample:Sound|audio_clk:u1|audio_clk_0002:audio_clk_inst|altera_pll:altera_pll_i ;
++--------------------------------------+------------------------+-----------------------------------------------------------------------------------+
+; Parameter Name                       ; Value                  ; Type                                                                              ;
++--------------------------------------+------------------------+-----------------------------------------------------------------------------------+
+; reference_clock_frequency            ; 50.0 MHz               ; String                                                                            ;
+; fractional_vco_multiplier            ; true                   ; String                                                                            ;
+; pll_type                             ; General                ; String                                                                            ;
+; pll_subtype                          ; General                ; String                                                                            ;
+; number_of_clocks                     ; 1                      ; Signed Integer                                                                    ;
+; operation_mode                       ; direct                 ; String                                                                            ;
+; deserialization_factor               ; 4                      ; Signed Integer                                                                    ;
+; data_rate                            ; 0                      ; Signed Integer                                                                    ;
+; sim_additional_refclk_cycles_to_lock ; 0                      ; Signed Integer                                                                    ;
+; output_clock_frequency0              ; 18.432000 MHz          ; String                                                                            ;
+; phase_shift0                         ; 0 ps                   ; String                                                                            ;
+; duty_cycle0                          ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency1              ; 0 MHz                  ; String                                                                            ;
+; phase_shift1                         ; 0 ps                   ; String                                                                            ;
+; duty_cycle1                          ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency2              ; 0 MHz                  ; String                                                                            ;
+; phase_shift2                         ; 0 ps                   ; String                                                                            ;
+; duty_cycle2                          ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency3              ; 0 MHz                  ; String                                                                            ;
+; phase_shift3                         ; 0 ps                   ; String                                                                            ;
+; duty_cycle3                          ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency4              ; 0 MHz                  ; String                                                                            ;
+; phase_shift4                         ; 0 ps                   ; String                                                                            ;
+; duty_cycle4                          ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency5              ; 0 MHz                  ; String                                                                            ;
+; phase_shift5                         ; 0 ps                   ; String                                                                            ;
+; duty_cycle5                          ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency6              ; 0 MHz                  ; String                                                                            ;
+; phase_shift6                         ; 0 ps                   ; String                                                                            ;
+; duty_cycle6                          ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency7              ; 0 MHz                  ; String                                                                            ;
+; phase_shift7                         ; 0 ps                   ; String                                                                            ;
+; duty_cycle7                          ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency8              ; 0 MHz                  ; String                                                                            ;
+; phase_shift8                         ; 0 ps                   ; String                                                                            ;
+; duty_cycle8                          ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency9              ; 0 MHz                  ; String                                                                            ;
+; phase_shift9                         ; 0 ps                   ; String                                                                            ;
+; duty_cycle9                          ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency10             ; 0 MHz                  ; String                                                                            ;
+; phase_shift10                        ; 0 ps                   ; String                                                                            ;
+; duty_cycle10                         ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency11             ; 0 MHz                  ; String                                                                            ;
+; phase_shift11                        ; 0 ps                   ; String                                                                            ;
+; duty_cycle11                         ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency12             ; 0 MHz                  ; String                                                                            ;
+; phase_shift12                        ; 0 ps                   ; String                                                                            ;
+; duty_cycle12                         ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency13             ; 0 MHz                  ; String                                                                            ;
+; phase_shift13                        ; 0 ps                   ; String                                                                            ;
+; duty_cycle13                         ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency14             ; 0 MHz                  ; String                                                                            ;
+; phase_shift14                        ; 0 ps                   ; String                                                                            ;
+; duty_cycle14                         ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency15             ; 0 MHz                  ; String                                                                            ;
+; phase_shift15                        ; 0 ps                   ; String                                                                            ;
+; duty_cycle15                         ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency16             ; 0 MHz                  ; String                                                                            ;
+; phase_shift16                        ; 0 ps                   ; String                                                                            ;
+; duty_cycle16                         ; 50                     ; Signed Integer                                                                    ;
+; output_clock_frequency17             ; 0 MHz                  ; String                                                                            ;
+; phase_shift17                        ; 0 ps                   ; String                                                                            ;
+; duty_cycle17                         ; 50                     ; Signed Integer                                                                    ;
+; clock_name_0                         ;                        ; String                                                                            ;
+; clock_name_1                         ;                        ; String                                                                            ;
+; clock_name_2                         ;                        ; String                                                                            ;
+; clock_name_3                         ;                        ; String                                                                            ;
+; clock_name_4                         ;                        ; String                                                                            ;
+; clock_name_5                         ;                        ; String                                                                            ;
+; clock_name_6                         ;                        ; String                                                                            ;
+; clock_name_7                         ;                        ; String                                                                            ;
+; clock_name_8                         ;                        ; String                                                                            ;
+; clock_name_global_0                  ; false                  ; String                                                                            ;
+; clock_name_global_1                  ; false                  ; String                                                                            ;
+; clock_name_global_2                  ; false                  ; String                                                                            ;
+; clock_name_global_3                  ; false                  ; String                                                                            ;
+; clock_name_global_4                  ; false                  ; String                                                                            ;
+; clock_name_global_5                  ; false                  ; String                                                                            ;
+; clock_name_global_6                  ; false                  ; String                                                                            ;
+; clock_name_global_7                  ; false                  ; String                                                                            ;
+; clock_name_global_8                  ; false                  ; String                                                                            ;
+; m_cnt_hi_div                         ; 1                      ; Signed Integer                                                                    ;
+; m_cnt_lo_div                         ; 1                      ; Signed Integer                                                                    ;
+; m_cnt_bypass_en                      ; false                  ; String                                                                            ;
+; m_cnt_odd_div_duty_en                ; false                  ; String                                                                            ;
+; n_cnt_hi_div                         ; 1                      ; Signed Integer                                                                    ;
+; n_cnt_lo_div                         ; 1                      ; Signed Integer                                                                    ;
+; n_cnt_bypass_en                      ; false                  ; String                                                                            ;
+; n_cnt_odd_div_duty_en                ; false                  ; String                                                                            ;
+; c_cnt_hi_div0                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div0                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en0                     ; false                  ; String                                                                            ;
+; c_cnt_in_src0                        ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en0               ; false                  ; String                                                                            ;
+; c_cnt_prst0                          ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst0                   ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div1                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div1                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en1                     ; false                  ; String                                                                            ;
+; c_cnt_in_src1                        ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en1               ; false                  ; String                                                                            ;
+; c_cnt_prst1                          ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst1                   ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div2                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div2                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en2                     ; false                  ; String                                                                            ;
+; c_cnt_in_src2                        ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en2               ; false                  ; String                                                                            ;
+; c_cnt_prst2                          ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst2                   ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div3                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div3                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en3                     ; false                  ; String                                                                            ;
+; c_cnt_in_src3                        ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en3               ; false                  ; String                                                                            ;
+; c_cnt_prst3                          ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst3                   ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div4                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div4                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en4                     ; false                  ; String                                                                            ;
+; c_cnt_in_src4                        ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en4               ; false                  ; String                                                                            ;
+; c_cnt_prst4                          ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst4                   ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div5                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div5                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en5                     ; false                  ; String                                                                            ;
+; c_cnt_in_src5                        ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en5               ; false                  ; String                                                                            ;
+; c_cnt_prst5                          ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst5                   ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div6                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div6                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en6                     ; false                  ; String                                                                            ;
+; c_cnt_in_src6                        ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en6               ; false                  ; String                                                                            ;
+; c_cnt_prst6                          ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst6                   ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div7                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div7                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en7                     ; false                  ; String                                                                            ;
+; c_cnt_in_src7                        ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en7               ; false                  ; String                                                                            ;
+; c_cnt_prst7                          ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst7                   ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div8                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div8                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en8                     ; false                  ; String                                                                            ;
+; c_cnt_in_src8                        ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en8               ; false                  ; String                                                                            ;
+; c_cnt_prst8                          ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst8                   ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div9                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div9                        ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en9                     ; false                  ; String                                                                            ;
+; c_cnt_in_src9                        ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en9               ; false                  ; String                                                                            ;
+; c_cnt_prst9                          ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst9                   ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div10                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div10                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en10                    ; false                  ; String                                                                            ;
+; c_cnt_in_src10                       ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en10              ; false                  ; String                                                                            ;
+; c_cnt_prst10                         ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst10                  ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div11                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div11                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en11                    ; false                  ; String                                                                            ;
+; c_cnt_in_src11                       ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en11              ; false                  ; String                                                                            ;
+; c_cnt_prst11                         ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst11                  ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div12                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div12                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en12                    ; false                  ; String                                                                            ;
+; c_cnt_in_src12                       ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en12              ; false                  ; String                                                                            ;
+; c_cnt_prst12                         ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst12                  ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div13                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div13                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en13                    ; false                  ; String                                                                            ;
+; c_cnt_in_src13                       ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en13              ; false                  ; String                                                                            ;
+; c_cnt_prst13                         ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst13                  ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div14                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div14                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en14                    ; false                  ; String                                                                            ;
+; c_cnt_in_src14                       ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en14              ; false                  ; String                                                                            ;
+; c_cnt_prst14                         ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst14                  ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div15                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div15                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en15                    ; false                  ; String                                                                            ;
+; c_cnt_in_src15                       ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en15              ; false                  ; String                                                                            ;
+; c_cnt_prst15                         ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst15                  ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div16                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div16                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en16                    ; false                  ; String                                                                            ;
+; c_cnt_in_src16                       ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en16              ; false                  ; String                                                                            ;
+; c_cnt_prst16                         ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst16                  ; 0                      ; Signed Integer                                                                    ;
+; c_cnt_hi_div17                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_lo_div17                       ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_bypass_en17                    ; false                  ; String                                                                            ;
+; c_cnt_in_src17                       ; ph_mux_clk             ; String                                                                            ;
+; c_cnt_odd_div_duty_en17              ; false                  ; String                                                                            ;
+; c_cnt_prst17                         ; 1                      ; Signed Integer                                                                    ;
+; c_cnt_ph_mux_prst17                  ; 0                      ; Signed Integer                                                                    ;
+; pll_vco_div                          ; 1                      ; Signed Integer                                                                    ;
+; pll_slf_rst                          ; false                  ; String                                                                            ;
+; pll_bw_sel                           ; low                    ; String                                                                            ;
+; pll_output_clk_frequency             ; 0 MHz                  ; String                                                                            ;
+; pll_cp_current                       ; 0                      ; Signed Integer                                                                    ;
+; pll_bwctrl                           ; 0                      ; Signed Integer                                                                    ;
+; pll_fractional_division              ; 1                      ; Signed Integer                                                                    ;
+; pll_fractional_cout                  ; 24                     ; Signed Integer                                                                    ;
+; pll_dsm_out_sel                      ; 1st_order              ; String                                                                            ;
+; mimic_fbclk_type                     ; gclk                   ; String                                                                            ;
+; pll_fbclk_mux_1                      ; glb                    ; String                                                                            ;
+; pll_fbclk_mux_2                      ; fb_1                   ; String                                                                            ;
+; pll_m_cnt_in_src                     ; ph_mux_clk             ; String                                                                            ;
+; pll_vcoph_div                        ; 1                      ; Signed Integer                                                                    ;
+; refclk1_frequency                    ; 0 MHz                  ; String                                                                            ;
+; pll_clkin_0_src                      ; clk_0                  ; String                                                                            ;
+; pll_clkin_1_src                      ; clk_0                  ; String                                                                            ;
+; pll_clk_loss_sw_en                   ; false                  ; String                                                                            ;
+; pll_auto_clk_sw_en                   ; false                  ; String                                                                            ;
+; pll_manu_clk_sw_en                   ; false                  ; String                                                                            ;
+; pll_clk_sw_dly                       ; 0                      ; Signed Integer                                                                    ;
+; pll_extclk_0_cnt_src                 ; pll_extclk_cnt_src_vss ; String                                                                            ;
+; pll_extclk_1_cnt_src                 ; pll_extclk_cnt_src_vss ; String                                                                            ;
++--------------------------------------+------------------------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; clk_freq       ; 10000 ; Signed Integer                                                          ;
+; countlimit     ; 2500  ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; total_cmd      ; 9     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave|altsyncram:sintable_rtl_0 ;
++------------------------------------+----------------------+-------------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                    ;
++------------------------------------+----------------------+-------------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                                 ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                              ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                            ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                            ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                          ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                                 ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                                 ;
+; WIDTH_A                            ; 16                   ; Untyped                                                                 ;
+; WIDTHAD_A                          ; 10                   ; Untyped                                                                 ;
+; NUMWORDS_A                         ; 1024                 ; Untyped                                                                 ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                                 ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                                 ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                                 ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                                 ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                                 ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                                 ;
+; WIDTH_B                            ; 1                    ; Untyped                                                                 ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                                 ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                                 ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                                 ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                                 ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                                 ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                                 ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                                 ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                                 ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                                 ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                 ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                                 ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                                 ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                 ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                                 ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                                                 ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                                 ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                                 ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                                 ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                                 ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                 ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                 ;
+; INIT_FILE                          ; sintable.mif         ; Untyped                                                                 ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                                 ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                                 ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                                 ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                                 ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                                 ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                                 ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                                 ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                                 ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                                 ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                                 ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                                 ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                                 ;
+; CBXI_PARAMETER                     ; altsyncram_jta1      ; Untyped                                                                 ;
++------------------------------------+----------------------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: KeyTimeGet:GetTime|ps2_keyboard:keyboard|altsyncram:fifo_rtl_0 ;
++------------------------------------+----------------------+-----------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                ;
++------------------------------------+----------------------+-----------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                             ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                             ;
+; WIDTH_A                            ; 8                    ; Untyped                                             ;
+; WIDTHAD_A                          ; 3                    ; Untyped                                             ;
+; NUMWORDS_A                         ; 8                    ; Untyped                                             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; WIDTH_B                            ; 8                    ; Untyped                                             ;
+; WIDTHAD_B                          ; 3                    ; Untyped                                             ;
+; NUMWORDS_B                         ; 8                    ; Untyped                                             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                             ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                             ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                             ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                             ;
+; CBXI_PARAMETER                     ; altsyncram_lsj1      ; Untyped                                             ;
++------------------------------------+----------------------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: TimeShow:HEXShowTime|HEXShow:second_show|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                            ;
++------------------------+----------------+-----------------------------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                                         ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                         ;
+; CBXI_PARAMETER         ; lpm_divide_62m ; Untyped                                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                  ;
++------------------------+----------------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: TimeShow:HEXShowTime|HEXShow:minute_show|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                            ;
++------------------------+----------------+-----------------------------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                                         ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                         ;
+; CBXI_PARAMETER         ; lpm_divide_62m ; Untyped                                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                  ;
++------------------------+----------------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: TimeShow:HEXShowTime|HEXShow:hour_show|lpm_divide:Mod0 ;
++------------------------+----------------+---------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                          ;
++------------------------+----------------+---------------------------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                       ;
+; CBXI_PARAMETER         ; lpm_divide_62m ; Untyped                                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                ;
++------------------------+----------------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                               ;
++-------------------------------------------+------------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                              ;
++-------------------------------------------+------------------------------------------------------------------------------------+
+; Number of entity instances                ; 2                                                                                  ;
+; Entity Instance                           ; AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave|altsyncram:sintable_rtl_0 ;
+;     -- OPERATION_MODE                     ; ROM                                                                                ;
+;     -- WIDTH_A                            ; 16                                                                                 ;
+;     -- NUMWORDS_A                         ; 1024                                                                               ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                       ;
+;     -- WIDTH_B                            ; 1                                                                                  ;
+;     -- NUMWORDS_B                         ; 1                                                                                  ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                       ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                          ;
+; Entity Instance                           ; KeyTimeGet:GetTime|ps2_keyboard:keyboard|altsyncram:fifo_rtl_0                     ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                                          ;
+;     -- WIDTH_A                            ; 8                                                                                  ;
+;     -- NUMWORDS_A                         ; 8                                                                                  ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                       ;
+;     -- WIDTH_B                            ; 8                                                                                  ;
+;     -- NUMWORDS_B                         ; 8                                                                                  ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                       ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                          ;
++-------------------------------------------+------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave" ;
++---------+-------+----------+---------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                 ;
++---------+-------+----------+---------------------------------------------------------+
+; reset_n ; Input ; Info     ; Stuck at VCC                                            ;
++---------+-------+----------+---------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio" ;
++---------+-------+----------+----------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                            ;
++---------+-------+----------+----------------------------------------------------+
+; reset_n ; Input ; Info     ; Stuck at VCC                                       ;
++---------+-------+----------+----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0"                                                               ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                      ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; ACK  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; W_R  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig" ;
++---------+-------+----------+------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                    ;
++---------+-------+----------+------------------------------------------------------------+
+; reset_n ; Input ; Info     ; Stuck at VCC                                               ;
++---------+-------+----------+------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk" ;
++-------+-------+----------+------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                              ;
++-------+-------+----------+------------------------------------------------------+
+; rst   ; Input ; Info     ; Stuck at GND                                         ;
+; clken ; Input ; Info     ; Stuck at VCC                                         ;
++-------+-------+----------+------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "KeyTimeGet:GetTime|ps2_keyboard:keyboard" ;
++------------+-------+----------+--------------------------------------+
+; Port       ; Type  ; Severity ; Details                              ;
++------------+-------+----------+--------------------------------------+
+; clrn       ; Input ; Info     ; Stuck at VCC                         ;
+; nextdata_n ; Input ; Info     ; Stuck at GND                         ;
++------------+-------+----------+--------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 263                         ;
+;     CLR               ; 6                           ;
+;     ENA               ; 71                          ;
+;     ENA CLR           ; 12                          ;
+;     ENA SCLR          ; 32                          ;
+;     ENA SCLR SLD      ; 15                          ;
+;     SCLR              ; 48                          ;
+;     plain             ; 79                          ;
+; arriav_io_obuf        ; 3                           ;
+; arriav_lcell_comb     ; 607                         ;
+;     arith             ; 188                         ;
+;         0 data inputs ; 18                          ;
+;         1 data inputs ; 85                          ;
+;         2 data inputs ; 43                          ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 21                          ;
+;     extend            ; 7                           ;
+;         7 data inputs ; 7                           ;
+;     normal            ; 412                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 26                          ;
+;         2 data inputs ; 45                          ;
+;         3 data inputs ; 75                          ;
+;         4 data inputs ; 108                         ;
+;         5 data inputs ; 97                          ;
+;         6 data inputs ; 60                          ;
+; boundary_port         ; 63                          ;
+; generic_pll           ; 1                           ;
+; stratixv_ram_block    ; 24                          ;
+;                       ;                             ;
+; Max LUT depth         ; 9.10                        ;
+; Average LUT depth     ; 4.14                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Dec 19 12:03:16 2018
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MyClock -c MyClock --analysis_and_elaboration
+    Info: Processing started: Sun Dec 23 15:43:05 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MyClock -c MyClock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file audio_clk.v
+    Info (12023): Found entity 1: audio_clk File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/audio_clk.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file audio_clk/audio_clk_0002.v
+    Info (12023): Found entity 1: audio_clk_0002 File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/audio_clk/audio_clk_0002.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file myclock.v
     Info (12023): Found entity 1: MyClock File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/MyClock.v Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file frequencydivision.v
@@ -172,20 +1118,277 @@ Info (12021): Found 1 design units, including 1 entities, in source file frequen
 Info (12021): Found 1 design units, including 1 entities, in source file hexshow.v
     Info (12023): Found entity 1: HEXShow File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/HEXShow.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file clockrun.v
-    Info (12023): Found entity 1: ClockRun File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 1
+    Info (12023): Found entity 1: ClockRun File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file timeshow.v
+    Info (12023): Found entity 1: TimeShow File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/TimeShow.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file ps2_keyboard.v
+    Info (12023): Found entity 1: ps2_keyboard File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ps2_keyboard.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file keytimeget.v
+    Info (12023): Found entity 1: KeyTimeGet File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTimeGet.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file keytranslate.v
+    Info (12023): Found entity 1: KeyTranslate File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTranslate.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alarmrun.v
+    Info (12023): Found entity 1: AlarmRun File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/AlarmRun.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sound_sample.v
+    Info (12023): Found entity 1: sound_sample File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/sound_sample.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file sin_generator.v
+    Info (12023): Found entity 1: Sin_Generator File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/Sin_Generator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file i2c_audio_config.v
+    Info (12023): Found entity 1: I2C_Audio_Config File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Audio_Config.v Line: 1
+Warning (10238): Verilog Module Declaration warning at I2C_Controller.v(55): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "I2C_Controller" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Controller.v Line: 55
+Info (12021): Found 1 design units, including 1 entities, in source file i2c_controller.v
+    Info (12023): Found entity 1: I2C_Controller File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Controller.v Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file clkgen.v
+    Info (12023): Found entity 1: clkgen File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/clkgen.v Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file i2s_audio.v
+    Info (12023): Found entity 1: I2S_Audio File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2S_Audio.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at sound_sample.v(75): created implicit net for "reset" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/sound_sample.v Line: 75
 Info (12127): Elaborating entity "MyClock" for the top level hierarchy
-Info (12128): Elaborating entity "FrequencyDivision" for hierarchy "FrequencyDivision:change_clk50_to_one_second" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/MyClock.v Line: 34
+Info (12128): Elaborating entity "FrequencyDivision" for hierarchy "FrequencyDivision:change_clk50_to_one_second" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/MyClock.v Line: 77
+Info (12128): Elaborating entity "ClockRun" for hierarchy "ClockRun:MainClock" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/MyClock.v Line: 91
+Info (12128): Elaborating entity "TimeShow" for hierarchy "TimeShow:HEXShowTime" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/MyClock.v Line: 106
+Warning (10230): Verilog HDL assignment warning at TimeShow.v(30): truncated value with size 8 to match size of target (6) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/TimeShow.v Line: 30
+Warning (10230): Verilog HDL assignment warning at TimeShow.v(31): truncated value with size 8 to match size of target (6) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/TimeShow.v Line: 31
+Warning (10230): Verilog HDL assignment warning at TimeShow.v(32): truncated value with size 8 to match size of target (6) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/TimeShow.v Line: 32
+Info (12128): Elaborating entity "HEXShow" for hierarchy "TimeShow:HEXShowTime|HEXShow:second_show" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/TimeShow.v Line: 55
+Info (12128): Elaborating entity "KeyTimeGet" for hierarchy "KeyTimeGet:GetTime" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/MyClock.v Line: 124
+Warning (10230): Verilog HDL assignment warning at KeyTimeGet.v(78): truncated value with size 8 to match size of target (6) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTimeGet.v Line: 78
+Warning (10230): Verilog HDL assignment warning at KeyTimeGet.v(79): truncated value with size 8 to match size of target (6) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTimeGet.v Line: 79
+Warning (10230): Verilog HDL assignment warning at KeyTimeGet.v(80): truncated value with size 8 to match size of target (6) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTimeGet.v Line: 80
+Warning (10230): Verilog HDL assignment warning at KeyTimeGet.v(97): truncated value with size 8 to match size of target (6) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTimeGet.v Line: 97
+Warning (10230): Verilog HDL assignment warning at KeyTimeGet.v(98): truncated value with size 8 to match size of target (6) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTimeGet.v Line: 98
+Warning (10230): Verilog HDL assignment warning at KeyTimeGet.v(99): truncated value with size 8 to match size of target (6) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTimeGet.v Line: 99
+Warning (10230): Verilog HDL assignment warning at KeyTimeGet.v(100): truncated value with size 8 to match size of target (6) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTimeGet.v Line: 100
+Warning (10230): Verilog HDL assignment warning at KeyTimeGet.v(101): truncated value with size 8 to match size of target (6) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTimeGet.v Line: 101
+Warning (10230): Verilog HDL assignment warning at KeyTimeGet.v(102): truncated value with size 8 to match size of target (6) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTimeGet.v Line: 102
+Warning (10034): Output port "all_ready" at KeyTimeGet.v(19) has no driver File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTimeGet.v Line: 19
+Info (12128): Elaborating entity "ps2_keyboard" for hierarchy "KeyTimeGet:GetTime|ps2_keyboard:keyboard" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTimeGet.v Line: 57
+Info (12128): Elaborating entity "KeyTranslate" for hierarchy "KeyTimeGet:GetTime|KeyTranslate:GetASCII" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTimeGet.v Line: 65
+Warning (10030): Net "ASCII_MEMORY.data_a" at KeyTranslate.v(11) has no driver or initial value, using a default initial value '0' File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTranslate.v Line: 11
+Warning (10030): Net "ASCII_MEMORY.waddr_a" at KeyTranslate.v(11) has no driver or initial value, using a default initial value '0' File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTranslate.v Line: 11
+Warning (10030): Net "ASCII_MEMORY.we_a" at KeyTranslate.v(11) has no driver or initial value, using a default initial value '0' File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTranslate.v Line: 11
+Info (12128): Elaborating entity "AlarmRun" for hierarchy "AlarmRun:Alarm" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/MyClock.v Line: 147
+Warning (10230): Verilog HDL assignment warning at AlarmRun.v(62): truncated value with size 32 to match size of target (3) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/AlarmRun.v Line: 62
+Info (12128): Elaborating entity "sound_sample" for hierarchy "AlarmRun:Alarm|sound_sample:Sound" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/AlarmRun.v Line: 82
+Info (12128): Elaborating entity "audio_clk" for hierarchy "AlarmRun:Alarm|sound_sample:Sound|audio_clk:u1" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/sound_sample.v Line: 75
+Info (12128): Elaborating entity "audio_clk_0002" for hierarchy "AlarmRun:Alarm|sound_sample:Sound|audio_clk:u1|audio_clk_0002:audio_clk_inst" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/audio_clk.v Line: 20
+Info (12128): Elaborating entity "altera_pll" for hierarchy "AlarmRun:Alarm|sound_sample:Sound|audio_clk:u1|audio_clk_0002:audio_clk_inst|altera_pll:altera_pll_i" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/audio_clk/audio_clk_0002.v Line: 85
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
+Info (12130): Elaborated megafunction instantiation "AlarmRun:Alarm|sound_sample:Sound|audio_clk:u1|audio_clk_0002:audio_clk_inst|altera_pll:altera_pll_i" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/audio_clk/audio_clk_0002.v Line: 85
+Info (12133): Instantiated megafunction "AlarmRun:Alarm|sound_sample:Sound|audio_clk:u1|audio_clk_0002:audio_clk_inst|altera_pll:altera_pll_i" with the following parameter: File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/audio_clk/audio_clk_0002.v Line: 85
+    Info (12134): Parameter "fractional_vco_multiplier" = "true"
+    Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
+    Info (12134): Parameter "operation_mode" = "direct"
+    Info (12134): Parameter "number_of_clocks" = "1"
+    Info (12134): Parameter "output_clock_frequency0" = "18.432000 MHz"
+    Info (12134): Parameter "phase_shift0" = "0 ps"
+    Info (12134): Parameter "duty_cycle0" = "50"
+    Info (12134): Parameter "output_clock_frequency1" = "0 MHz"
+    Info (12134): Parameter "phase_shift1" = "0 ps"
+    Info (12134): Parameter "duty_cycle1" = "50"
+    Info (12134): Parameter "output_clock_frequency2" = "0 MHz"
+    Info (12134): Parameter "phase_shift2" = "0 ps"
+    Info (12134): Parameter "duty_cycle2" = "50"
+    Info (12134): Parameter "output_clock_frequency3" = "0 MHz"
+    Info (12134): Parameter "phase_shift3" = "0 ps"
+    Info (12134): Parameter "duty_cycle3" = "50"
+    Info (12134): Parameter "output_clock_frequency4" = "0 MHz"
+    Info (12134): Parameter "phase_shift4" = "0 ps"
+    Info (12134): Parameter "duty_cycle4" = "50"
+    Info (12134): Parameter "output_clock_frequency5" = "0 MHz"
+    Info (12134): Parameter "phase_shift5" = "0 ps"
+    Info (12134): Parameter "duty_cycle5" = "50"
+    Info (12134): Parameter "output_clock_frequency6" = "0 MHz"
+    Info (12134): Parameter "phase_shift6" = "0 ps"
+    Info (12134): Parameter "duty_cycle6" = "50"
+    Info (12134): Parameter "output_clock_frequency7" = "0 MHz"
+    Info (12134): Parameter "phase_shift7" = "0 ps"
+    Info (12134): Parameter "duty_cycle7" = "50"
+    Info (12134): Parameter "output_clock_frequency8" = "0 MHz"
+    Info (12134): Parameter "phase_shift8" = "0 ps"
+    Info (12134): Parameter "duty_cycle8" = "50"
+    Info (12134): Parameter "output_clock_frequency9" = "0 MHz"
+    Info (12134): Parameter "phase_shift9" = "0 ps"
+    Info (12134): Parameter "duty_cycle9" = "50"
+    Info (12134): Parameter "output_clock_frequency10" = "0 MHz"
+    Info (12134): Parameter "phase_shift10" = "0 ps"
+    Info (12134): Parameter "duty_cycle10" = "50"
+    Info (12134): Parameter "output_clock_frequency11" = "0 MHz"
+    Info (12134): Parameter "phase_shift11" = "0 ps"
+    Info (12134): Parameter "duty_cycle11" = "50"
+    Info (12134): Parameter "output_clock_frequency12" = "0 MHz"
+    Info (12134): Parameter "phase_shift12" = "0 ps"
+    Info (12134): Parameter "duty_cycle12" = "50"
+    Info (12134): Parameter "output_clock_frequency13" = "0 MHz"
+    Info (12134): Parameter "phase_shift13" = "0 ps"
+    Info (12134): Parameter "duty_cycle13" = "50"
+    Info (12134): Parameter "output_clock_frequency14" = "0 MHz"
+    Info (12134): Parameter "phase_shift14" = "0 ps"
+    Info (12134): Parameter "duty_cycle14" = "50"
+    Info (12134): Parameter "output_clock_frequency15" = "0 MHz"
+    Info (12134): Parameter "phase_shift15" = "0 ps"
+    Info (12134): Parameter "duty_cycle15" = "50"
+    Info (12134): Parameter "output_clock_frequency16" = "0 MHz"
+    Info (12134): Parameter "phase_shift16" = "0 ps"
+    Info (12134): Parameter "duty_cycle16" = "50"
+    Info (12134): Parameter "output_clock_frequency17" = "0 MHz"
+    Info (12134): Parameter "phase_shift17" = "0 ps"
+    Info (12134): Parameter "duty_cycle17" = "50"
+    Info (12134): Parameter "pll_type" = "General"
+    Info (12134): Parameter "pll_subtype" = "General"
+Info (12128): Elaborating entity "clkgen" for hierarchy "AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/sound_sample.v Line: 79
+Info (12128): Elaborating entity "I2C_Audio_Config" for hierarchy "AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/sound_sample.v Line: 82
+Warning (10030): Net "audio_reg.data_a" at I2C_Audio_Config.v(24) has no driver or initial value, using a default initial value '0' File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Audio_Config.v Line: 24
+Warning (10030): Net "audio_reg.waddr_a" at I2C_Audio_Config.v(24) has no driver or initial value, using a default initial value '0' File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Audio_Config.v Line: 24
+Warning (10030): Net "audio_cmd.data_a" at I2C_Audio_Config.v(25) has no driver or initial value, using a default initial value '0' File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Audio_Config.v Line: 25
+Warning (10030): Net "audio_cmd.waddr_a" at I2C_Audio_Config.v(25) has no driver or initial value, using a default initial value '0' File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Audio_Config.v Line: 25
+Warning (10030): Net "audio_reg.we_a" at I2C_Audio_Config.v(24) has no driver or initial value, using a default initial value '0' File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Audio_Config.v Line: 24
+Warning (10030): Net "audio_cmd.we_a" at I2C_Audio_Config.v(25) has no driver or initial value, using a default initial value '0' File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Audio_Config.v Line: 25
+Info (12128): Elaborating entity "I2C_Controller" for hierarchy "AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|I2C_Controller:u0" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Audio_Config.v Line: 54
+Warning (10230): Verilog HDL assignment warning at I2C_Controller.v(78): truncated value with size 32 to match size of target (1) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Controller.v Line: 78
+Warning (10230): Verilog HDL assignment warning at I2C_Controller.v(77): truncated value with size 32 to match size of target (1) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Controller.v Line: 77
+Warning (10230): Verilog HDL assignment warning at I2C_Controller.v(89): truncated value with size 32 to match size of target (6) File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Controller.v Line: 89
+Info (12128): Elaborating entity "I2S_Audio" for hierarchy "AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/sound_sample.v Line: 84
+Info (12128): Elaborating entity "Sin_Generator" for hierarchy "AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/sound_sample.v Line: 86
+Warning (10858): Verilog HDL warning at Sin_Generator.v(10): object sintable used but never assigned File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/Sin_Generator.v Line: 10
+Warning (276020): Inferred RAM node "KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Info (276014): Found 3 instances of uninferred RAM logic
+    Info (276004): RAM logic "AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|audio_reg" is uninferred due to inappropriate RAM size File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Audio_Config.v Line: 24
+    Info (276004): RAM logic "AlarmRun:Alarm|sound_sample:Sound|I2C_Audio_Config:myconfig|audio_cmd" is uninferred due to inappropriate RAM size File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/I2C_Audio_Config.v Line: 25
+    Info (276007): RAM logic "KeyTimeGet:GetTime|KeyTranslate:GetASCII|ASCII_MEMORY" is uninferred due to asynchronous read logic File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/KeyTranslate.v Line: 11
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/db/MyClock.ram0_I2C_Audio_Config_f19a1d43.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/db/MyClock.ram1_I2C_Audio_Config_f19a1d43.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (19000): Inferred 2 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave|sintable_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to sintable.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "KeyTimeGet:GetTime|ps2_keyboard:keyboard|fifo_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 3
+        Info (286033): Parameter NUMWORDS_A set to 8
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 3
+        Info (286033): Parameter NUMWORDS_B set to 8
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "TimeShow:HEXShowTime|HEXShow:second_show|Mod0" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/HEXShow.v Line: 19
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "TimeShow:HEXShowTime|HEXShow:minute_show|Mod0" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/HEXShow.v Line: 19
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "TimeShow:HEXShowTime|HEXShow:hour_show|Mod0" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/HEXShow.v Line: 19
+Info (12130): Elaborated megafunction instantiation "AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave|altsyncram:sintable_rtl_0"
+Info (12133): Instantiated megafunction "AlarmRun:Alarm|sound_sample:Sound|Sin_Generator:sin_wave|altsyncram:sintable_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "sintable.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jta1.tdf
+    Info (12023): Found entity 1: altsyncram_jta1 File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/db/altsyncram_jta1.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "KeyTimeGet:GetTime|ps2_keyboard:keyboard|altsyncram:fifo_rtl_0"
+Info (12133): Instantiated megafunction "KeyTimeGet:GetTime|ps2_keyboard:keyboard|altsyncram:fifo_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "3"
+    Info (12134): Parameter "NUMWORDS_A" = "8"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "3"
+    Info (12134): Parameter "NUMWORDS_B" = "8"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_lsj1.tdf
+    Info (12023): Found entity 1: altsyncram_lsj1 File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/db/altsyncram_lsj1.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "TimeShow:HEXShowTime|HEXShow:second_show|lpm_divide:Mod0" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/HEXShow.v Line: 19
+Info (12133): Instantiated megafunction "TimeShow:HEXShowTime|HEXShow:second_show|lpm_divide:Mod0" with the following parameter: File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/HEXShow.v Line: 19
+    Info (12134): Parameter "LPM_WIDTHN" = "6"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_62m.tdf
+    Info (12023): Found entity 1: lpm_divide_62m File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/db/lpm_divide_62m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9kh File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/db/sign_div_unsign_9kh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ose.tdf
+    Info (12023): Found entity 1: alt_u_div_ose File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/db/alt_u_div_ose.tdf Line: 22
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "AUD_BCLK" and its non-tri-state driver. File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/MyClock.v Line: 41
+    Warning (13035): Inserted always-enabled tri-state buffer between "AUD_DACLRCK" and its non-tri-state driver. File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/MyClock.v Line: 43
+Info (13060): One or more bidirectional pins are fed by always enabled tri-state buffers
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "AUD_DACLRCK" is moved to its source File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/MyClock.v Line: 43
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "ClockRun:MainClock|second[0]" is converted into an equivalent circuit using register "ClockRun:MainClock|second[0]~_emulated" and latch "ClockRun:MainClock|second[0]~1" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|second[1]" is converted into an equivalent circuit using register "ClockRun:MainClock|second[1]~_emulated" and latch "ClockRun:MainClock|second[1]~5" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|second[2]" is converted into an equivalent circuit using register "ClockRun:MainClock|second[2]~_emulated" and latch "ClockRun:MainClock|second[2]~9" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|second[3]" is converted into an equivalent circuit using register "ClockRun:MainClock|second[3]~_emulated" and latch "ClockRun:MainClock|second[3]~13" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|second[5]" is converted into an equivalent circuit using register "ClockRun:MainClock|second[5]~_emulated" and latch "ClockRun:MainClock|second[5]~17" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|second[4]" is converted into an equivalent circuit using register "ClockRun:MainClock|second[4]~_emulated" and latch "ClockRun:MainClock|second[4]~21" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|minute[0]" is converted into an equivalent circuit using register "ClockRun:MainClock|minute[0]~_emulated" and latch "ClockRun:MainClock|minute[0]~1" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|minute[1]" is converted into an equivalent circuit using register "ClockRun:MainClock|minute[1]~_emulated" and latch "ClockRun:MainClock|minute[1]~5" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|minute[2]" is converted into an equivalent circuit using register "ClockRun:MainClock|minute[2]~_emulated" and latch "ClockRun:MainClock|minute[2]~9" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|minute[3]" is converted into an equivalent circuit using register "ClockRun:MainClock|minute[3]~_emulated" and latch "ClockRun:MainClock|minute[3]~13" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|minute[5]" is converted into an equivalent circuit using register "ClockRun:MainClock|minute[5]~_emulated" and latch "ClockRun:MainClock|minute[5]~17" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|minute[4]" is converted into an equivalent circuit using register "ClockRun:MainClock|minute[4]~_emulated" and latch "ClockRun:MainClock|minute[4]~21" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|hour[0]" is converted into an equivalent circuit using register "ClockRun:MainClock|hour[0]~_emulated" and latch "ClockRun:MainClock|hour[0]~1" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|hour[1]" is converted into an equivalent circuit using register "ClockRun:MainClock|hour[1]~_emulated" and latch "ClockRun:MainClock|hour[1]~5" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|hour[2]" is converted into an equivalent circuit using register "ClockRun:MainClock|hour[2]~_emulated" and latch "ClockRun:MainClock|hour[2]~9" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|hour[3]" is converted into an equivalent circuit using register "ClockRun:MainClock|hour[3]~_emulated" and latch "ClockRun:MainClock|hour[3]~13" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|hour[5]" is converted into an equivalent circuit using register "ClockRun:MainClock|hour[5]~_emulated" and latch "ClockRun:MainClock|hour[5]~17" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+    Warning (13310): Register "ClockRun:MainClock|hour[4]" is converted into an equivalent circuit using register "ClockRun:MainClock|hour[4]~_emulated" and latch "ClockRun:MainClock|hour[4]~21" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/ClockRun.v Line: 51
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "AUD_BCLK~synth" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/MyClock.v Line: 41
+    Warning (13010): Node "AUD_DACLRCK~synth" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/MyClock.v Line: 43
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "DONE" is stuck at GND File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/MyClock.v Line: 20
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/output_files/MyClock.map.smsg
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4801 megabytes
-    Info: Processing ended: Wed Dec 19 12:03:36 2018
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 7 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning: RST port on the PLL is not properly connected on instance AlarmRun:Alarm|sound_sample:Sound|audio_clk:u1|audio_clk_0002:audio_clk_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: d:/study/experiments_in_digital_logical_circuits/environment/quartus/libraries/megafunctions/altera_pll.v Line: 748
+    Info: Must be connected
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "reset_en" File: D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/MyClock.v Line: 10
+Info (21057): Implemented 757 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 55 output pins
+    Info (21060): Implemented 3 bidirectional pins
+    Info (21061): Implemented 669 logic cells
+    Info (21064): Implemented 24 RAM segments
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 64 warnings
+    Info: Peak virtual memory: 4877 megabytes
+    Info: Processing ended: Sun Dec 23 15:43:25 2018
     Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:43
+    Info: Total CPU time (on all processors): 00:00:33
 
 
-+--------------------------------------------+
-; Analysis & Elaboration Suppressed Messages ;
-+--------------------------------------------+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
 The suppressed messages can be found in D:/OneDrive/Experiments_in_Digital_Logical_Circuits/CLOCK/MyClock/output_files/MyClock.map.smsg.
 
 

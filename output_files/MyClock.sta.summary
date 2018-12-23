@@ -2,52 +2,436 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1100mV 85C Model Setup 'KeyTimeGet:GetTime|KeyTranslate:GetASCII|out_en'
+Slack : -6.914
+TNS   : -149.922
+
+Type  : Slow 1100mV 85C Model Setup 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -6.598
+TNS   : -6.598
+
+Type  : Slow 1100mV 85C Model Setup 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : -4.847
+TNS   : -143.329
+
 Type  : Slow 1100mV 85C Model Setup 'CLK_50'
-Slack : -2.295
-TNS   : -70.884
+Slack : -4.473
+TNS   : -37.056
+
+Type  : Slow 1100mV 85C Model Setup 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_LRCK'
+Slack : -4.201
+TNS   : -91.319
+
+Type  : Slow 1100mV 85C Model Setup 'KeyTimeGet:GetTime|set_en'
+Slack : -2.693
+TNS   : -35.566
+
+Type  : Slow 1100mV 85C Model Setup 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_BCK'
+Slack : -2.240
+TNS   : -33.242
+
+Type  : Slow 1100mV 85C Model Setup 'AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk|clkout'
+Slack : -2.145
+TNS   : -68.387
+
+Type  : Slow 1100mV 85C Model Hold 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : 0.149
+TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'CLK_50'
-Slack : 0.366
+Slack : 0.222
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'KeyTimeGet:GetTime|set_en'
+Slack : 0.353
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_LRCK'
+Slack : 0.427
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'KeyTimeGet:GetTime|KeyTranslate:GetASCII|out_en'
+Slack : 0.541
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_BCK'
+Slack : 0.597
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk|clkout'
+Slack : 0.671
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.681
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : -1.918
+TNS   : -28.394
+
+Type  : Slow 1100mV 85C Model Removal 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : 0.373
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_LRCK'
+Slack : -2.174
+TNS   : -82.745
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk|clkout'
+Slack : -0.394
+TNS   : -22.684
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : -0.394
+TNS   : -21.962
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KeyTimeGet:GetTime|KeyTranslate:GetASCII|out_en'
+Slack : -0.394
+TNS   : -12.494
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_BCK'
+Slack : -0.394
+TNS   : -9.813
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KeyTimeGet:GetTime|set_en'
+Slack : 0.242
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.233
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLK_50'
-Slack : -0.394
-TNS   : -17.441
+Slack : 8.869
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 26.429
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'KeyTimeGet:GetTime|KeyTranslate:GetASCII|out_en'
+Slack : -7.003
+TNS   : -150.930
+
+Type  : Slow 1100mV 0C Model Setup 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -5.949
+TNS   : -5.949
+
+Type  : Slow 1100mV 0C Model Setup 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : -4.838
+TNS   : -139.382
+
+Type  : Slow 1100mV 0C Model Setup 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_LRCK'
+Slack : -4.424
+TNS   : -91.340
 
 Type  : Slow 1100mV 0C Model Setup 'CLK_50'
-Slack : -2.243
-TNS   : -69.441
+Slack : -4.300
+TNS   : -32.978
+
+Type  : Slow 1100mV 0C Model Setup 'KeyTimeGet:GetTime|set_en'
+Slack : -2.510
+TNS   : -33.088
+
+Type  : Slow 1100mV 0C Model Setup 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_BCK'
+Slack : -2.203
+TNS   : -32.624
+
+Type  : Slow 1100mV 0C Model Setup 'AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk|clkout'
+Slack : -2.170
+TNS   : -66.586
 
 Type  : Slow 1100mV 0C Model Hold 'CLK_50'
-Slack : 0.371
+Slack : -0.027
+TNS   : -0.027
+
+Type  : Slow 1100mV 0C Model Hold 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : 0.177
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'KeyTimeGet:GetTime|set_en'
+Slack : 0.195
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_LRCK'
+Slack : 0.440
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'KeyTimeGet:GetTime|KeyTranslate:GetASCII|out_en'
+Slack : 0.578
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_BCK'
+Slack : 0.619
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk|clkout'
+Slack : 0.662
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : -1.876
+TNS   : -27.893
+
+Type  : Slow 1100mV 0C Model Removal 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : 0.365
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_LRCK'
+Slack : -2.174
+TNS   : -82.417
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk|clkout'
+Slack : -0.394
+TNS   : -22.348
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : -0.394
+TNS   : -21.887
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KeyTimeGet:GetTime|KeyTranslate:GetASCII|out_en'
+Slack : -0.394
+TNS   : -12.133
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_BCK'
+Slack : -0.394
+TNS   : -9.078
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KeyTimeGet:GetTime|set_en'
+Slack : 0.282
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.233
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLK_50'
-Slack : -0.394
-TNS   : -18.468
+Slack : 8.831
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 26.385
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -5.600
+TNS   : -5.600
+
+Type  : Fast 1100mV 85C Model Setup 'KeyTimeGet:GetTime|KeyTranslate:GetASCII|out_en'
+Slack : -3.984
+TNS   : -83.679
 
 Type  : Fast 1100mV 85C Model Setup 'CLK_50'
-Slack : -0.944
-TNS   : -27.496
+Slack : -3.557
+TNS   : -27.029
+
+Type  : Fast 1100mV 85C Model Setup 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : -2.943
+TNS   : -86.395
+
+Type  : Fast 1100mV 85C Model Setup 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_LRCK'
+Slack : -1.985
+TNS   : -43.954
+
+Type  : Fast 1100mV 85C Model Setup 'KeyTimeGet:GetTime|set_en'
+Slack : -1.291
+TNS   : -13.814
+
+Type  : Fast 1100mV 85C Model Setup 'AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk|clkout'
+Slack : -1.092
+TNS   : -29.773
+
+Type  : Fast 1100mV 85C Model Setup 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_BCK'
+Slack : -1.028
+TNS   : -12.594
+
+Type  : Fast 1100mV 85C Model Hold 'KeyTimeGet:GetTime|set_en'
+Slack : -0.042
+TNS   : -0.042
+
+Type  : Fast 1100mV 85C Model Hold 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : 0.106
+TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'CLK_50'
-Slack : 0.184
+Slack : 0.130
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_LRCK'
+Slack : 0.157
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'KeyTimeGet:GetTime|KeyTranslate:GetASCII|out_en'
+Slack : 0.207
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_BCK'
+Slack : 0.291
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.302
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk|clkout'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : -1.431
+TNS   : -19.927
+
+Type  : Fast 1100mV 85C Model Removal 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : 0.092
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_LRCK'
+Slack : -2.174
+TNS   : -74.560
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : 0.002
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk|clkout'
+Slack : 0.047
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KeyTimeGet:GetTime|KeyTranslate:GetASCII|out_en'
+Slack : 0.047
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_BCK'
+Slack : 0.093
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KeyTimeGet:GetTime|set_en'
+Slack : 0.285
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.233
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLK_50'
-Slack : -0.093
-TNS   : -2.959
+Slack : 8.788
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 26.682
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -4.471
+TNS   : -4.471
+
+Type  : Fast 1100mV 0C Model Setup 'KeyTimeGet:GetTime|KeyTranslate:GetASCII|out_en'
+Slack : -3.735
+TNS   : -78.970
 
 Type  : Fast 1100mV 0C Model Setup 'CLK_50'
-Slack : -0.771
-TNS   : -22.272
+Slack : -2.987
+TNS   : -20.953
+
+Type  : Fast 1100mV 0C Model Setup 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : -2.646
+TNS   : -77.360
+
+Type  : Fast 1100mV 0C Model Setup 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_LRCK'
+Slack : -1.978
+TNS   : -40.159
+
+Type  : Fast 1100mV 0C Model Setup 'KeyTimeGet:GetTime|set_en'
+Slack : -1.099
+TNS   : -11.499
+
+Type  : Fast 1100mV 0C Model Setup 'AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk|clkout'
+Slack : -0.933
+TNS   : -25.148
+
+Type  : Fast 1100mV 0C Model Setup 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_BCK'
+Slack : -0.919
+TNS   : -10.992
 
 Type  : Fast 1100mV 0C Model Hold 'CLK_50'
-Slack : 0.176
+Slack : -0.059
+TNS   : -0.101
+
+Type  : Fast 1100mV 0C Model Hold 'KeyTimeGet:GetTime|set_en'
+Slack : -0.055
+TNS   : -0.149
+
+Type  : Fast 1100mV 0C Model Hold 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : 0.074
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_LRCK'
+Slack : 0.143
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'KeyTimeGet:GetTime|KeyTranslate:GetASCII|out_en'
+Slack : 0.160
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_BCK'
+Slack : 0.231
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk|clkout'
+Slack : 0.287
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.296
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : -1.242
+TNS   : -17.370
+
+Type  : Fast 1100mV 0C Model Removal 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : 0.039
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_LRCK'
+Slack : -2.174
+TNS   : -74.370
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'FrequencyDivision:change_clk50_to_one_second|clk_output'
+Slack : 0.036
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KeyTimeGet:GetTime|KeyTranslate:GetASCII|out_en'
+Slack : 0.044
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'AlarmRun:Alarm|sound_sample:Sound|clkgen:my_i2c_clk|clkout'
+Slack : 0.076
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'AlarmRun:Alarm|sound_sample:Sound|I2S_Audio:myaudio|AUD_BCK'
+Slack : 0.114
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KeyTimeGet:GetTime|set_en'
+Slack : 0.327
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.233
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLK_50'
-Slack : -0.090
-TNS   : -2.900
+Slack : 8.782
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Alarm|Sound|u1|audio_clk_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 26.670
+TNS   : 0.000
 
 ------------------------------------------------------------
