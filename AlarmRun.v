@@ -7,11 +7,22 @@ module AlarmRun(
 	input [5:0] minute,
 	input [5:0] second,
 
+	input CLK_50,
+
 	input alarm_set,
 
 	input one_second_clk, // 每秒的时钟周期
 
-	output reg LEDAlarm // 测试用的LED闹铃输出
+	output [3:0] LEDR,
+	output reg LEDAlarm, // 测试用的LED闹铃输出
+
+	inout 		          		AUD_BCLK,
+	output		          		AUD_DACDAT,
+	inout 		          		AUD_DACLRCK,
+	output		          		AUD_XCK, // 音频实验所需要的大量引脚
+
+	output		          		FPGA_I2C_SCLK,
+	inout 		          		FPGA_I2C_SDAT
 
 	);
 
@@ -58,5 +69,16 @@ module AlarmRun(
 		end
 	end
 
+	sound_sample Sound(
+		.CLOCK_50(CLK_50),
+		.LEDR(LEDR),
+		.AUD_BCLK(AUD_BCLK),
+		.AUD_DACDAT(AUD_DACDAT),
+		.AUD_DACLRCK(AUD_DACLRCK),
+		.AUD_XCK(AUD_XCK),
+		.FPGA_I2C_SCLK(FPGA_I2C_SCLK),
+		.FPGA_I2C_SDAT(FPGA_I2C_SDAT),
+		.en_count(count)
+	);
 	
 endmodule
