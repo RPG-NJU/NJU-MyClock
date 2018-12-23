@@ -19,7 +19,9 @@ module KeyTimeGet(
 	output reg all_ready, // 用于标识已经敲下了回车键，所有的时间准备已经充分
 	output reg [5:0] hour,
 	output reg [5:0] minute,
-	output reg [5:0] second
+	output reg [5:0] second,
+
+	output wire trans_en
 	//output wire [7:0] ASCII
 	);
 
@@ -28,7 +30,7 @@ module KeyTimeGet(
 	wire [7:0] data;
 	wire ready;
 	wire [7:0] ASCII;
-	wire trans_en;
+	
 	reg [2:0] location;
 	//wire ready;
 	//wire nextdata_n;
@@ -58,6 +60,7 @@ module KeyTimeGet(
 		.ready(ready),
 		.now_data(data),
 		.ASCII(ASCII),
+		.CLK_50(CLK_50),
 		.out_en(trans_en)
 	);
 
@@ -71,40 +74,36 @@ module KeyTimeGet(
 				alarm_en = 1'b1;
 			else if (ASCII == 8'h73)
 				set_en = 1'b1;
-		end
-
-		else if (ASCII == 8'h64) // 此时是D
-		begin
-			alarm_en = 1'b0;
-			set_en = 1'b0;
-			if (all_ready == 1'b0) all_ready = 1'b1;
-			else all_ready = 1'b0;
-
+			
 			hour = 8'b0;
 			minute = 8'b0;
 			second = 8'b0;
 			location = 3'b0;
 		end
 
-		else // 这个时候需要监听键盘的动向，并且将数据写入时间设定
+		else if (ASCII == 8'h64) // 此时是D
 		begin
-			if (ASCII >= 8'h30 && ASCII <= 8'h39)
-			begin
-				case (location)
-				0:hour = hour + (ASCII - 8'h30) * 8'd10;
-				1:hour = hour + (ASCII - 8'h30);
-				2:minute = minute + (ASCII - 8'h30) * 8'd10;
-				3:minute = minute + (ASCII - 8'h30);
-				4:second = second + (ASCII - 8'h30) * 8'd10;
-				5:second = second + (ASCII - 8'h30);
-				default:;
-				endcase
-				location = location + 3'b1;
-			end
+			alarm_en = 1'b0;
+			set_en = 1'b0;
+			// if (all_ready == 1'b0) all_ready = 1'b1;
+			// else all_ready = 1'b0;
+		end
 
-			else
-			begin
-			end
+		else if (ASCII >= 8'h30 && ASCII <= 8'h39)// 这个时候需要监听键盘的动向，并且将数据写入时间设定
+		begin
+			
+		
+			case (location)
+			0:begin hour = hour + (ASCII - 8'h30) * 8'd10;location = location + 3'b1;end
+			1:begin hour = hour + (ASCII - 8'h30);location = location + 3'b1;end
+			2:begin minute = minute + (ASCII - 8'h30) * 8'd10;location = location + 3'b1;end
+			3:begin minute = minute + (ASCII - 8'h30);location = location + 3'b1;end
+			4:begin second = second + (ASCII - 8'h30) * 8'd10;location = location + 3'b1;end
+			5:begin second = second + (ASCII - 8'h30);location = location + 3'b1;end
+			default:;
+			endcase
+			//location = location + 3'b1;
+		
 
 		end
 	end

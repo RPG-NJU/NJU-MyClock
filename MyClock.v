@@ -18,9 +18,13 @@ module MyClock(
 	output wire set_time_en, // 用于进行时间设定的使能端
 	output wire set_alarm_en, // 同理
 	output wire DONE, // D的敲击显示
+	output wire key_trans_en,
+	output wire AlarmLED, // 用于测试输出Alarm信息
+
+	output wire [3:0] LEDR, // 这个标准的四个输出是给移植而来的音频实验使用的，个人毫无意义
 	//output wire [7:0] ASCII_show, // 用于DEBUG，马上就会删除
 
-	output wire [41:0] all_HEX   //此处是所有需要输出的七段数码管的信息
+	output wire [41:0] all_HEX,   //此处是所有需要输出的七段数码管的信息
 								 //便于使用所以没有进行区分0~5号HEX
 								 /*
 								  * [6:0]
@@ -33,6 +37,15 @@ module MyClock(
 								  */
 
 	//output wire keyboard_ready
+
+	inout 		          		AUD_BCLK,
+	output		          		AUD_DACDAT,
+	inout 		          		AUD_DACLRCK,
+	output		          		AUD_XCK, // 音频实验所需要的大量引脚
+
+	output		          		FPGA_I2C_SCLK,
+	inout 		          		FPGA_I2C_SDAT
+
 	);
 
 	wire [5:0] clock_hour;
@@ -101,11 +114,36 @@ module MyClock(
 		.alarm_en(set_alarm_en),
 		//.ready(keyboard_ready)
 
+		.trans_en(key_trans_en),
+
 		.hour(hour_trans),
 		.minute(minute_trans),
 		.second(second_trans),
 		.all_ready(DONE)
 		//.ASCII(ASCII_show)
+	);
+
+	AlarmRun Alarm(
+		.hour_set(hour_trans),
+		.minute_set(minute_trans),
+		.second_set(second_trans),
+		.hour(clock_hour),
+		.minute(clock_minute),
+		.second(clock_second),
+
+		.alarm_set(set_alarm_en),
+		.one_second_clk(clock_clk),
+
+		.CLK_50(CLK_50),
+		.LEDR(LEDR),
+
+		.LEDAlarm(AlarmLED),
+		.AUD_BCLK(AUD_BCLK),
+		.AUD_DACDAT(AUD_DACDAT),
+		.AUD_DACLRCK(AUD_DACLRCK),
+		.AUD_XCK(AUD_XCK),
+		.FPGA_I2C_SCLK(FPGA_I2C_SCLK),
+		.FPGA_I2C_SDAT(FPGA_I2C_SDAT)
 	);
 
 endmodule

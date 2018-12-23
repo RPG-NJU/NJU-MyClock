@@ -49,8 +49,6 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_global_assignment -name VERILOG_FILE MyClock.v
-set_global_assignment -name VERILOG_FILE FrequencyDivision.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -58,9 +56,6 @@ set_location_assignment PIN_AA24 -to clock_clk
 set_location_assignment PIN_AB30 -to run_en
 set_location_assignment PIN_Y27 -to reset_en
 set_location_assignment PIN_AF14 -to CLK_50
-set_global_assignment -name VERILOG_FILE HEXShow.v
-set_global_assignment -name VERILOG_FILE ClockRun.v
-set_global_assignment -name VERILOG_FILE TimeShow.v
 set_location_assignment PIN_W17 -to all_HEX[0]
 set_location_assignment PIN_V18 -to all_HEX[1]
 set_location_assignment PIN_AG17 -to all_HEX[2]
@@ -103,11 +98,39 @@ set_location_assignment PIN_AG20 -to all_HEX[38]
 set_location_assignment PIN_AE19 -to all_HEX[39]
 set_location_assignment PIN_AF19 -to all_HEX[40]
 set_location_assignment PIN_AB21 -to all_HEX[41]
-set_global_assignment -name VERILOG_FILE ps2_keyboard.v
-set_global_assignment -name VERILOG_FILE KeyTimeGet.v
 set_location_assignment PIN_AB25 -to ps2_clk
 set_location_assignment PIN_AA25 -to ps2_data
-set_global_assignment -name VERILOG_FILE KeyTranslate.v
 set_location_assignment PIN_AB23 -to set_time_en
 set_location_assignment PIN_AC23 -to set_alarm_en
+set_location_assignment PIN_AD24 -to key_trans_en
+set_location_assignment PIN_AC22 -to AlarmLED
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name SIP_FILE audio_clk.sip
+set_global_assignment -name QIP_FILE audio_clk.qip
+set_global_assignment -name VERILOG_FILE MyClock.v
+set_global_assignment -name VERILOG_FILE FrequencyDivision.v
+set_global_assignment -name VERILOG_FILE HEXShow.v
+set_global_assignment -name VERILOG_FILE ClockRun.v
+set_global_assignment -name VERILOG_FILE TimeShow.v
+set_global_assignment -name VERILOG_FILE ps2_keyboard.v
+set_global_assignment -name VERILOG_FILE KeyTimeGet.v
+set_global_assignment -name VERILOG_FILE KeyTranslate.v
+set_global_assignment -name VERILOG_FILE AlarmRun.v
+set_global_assignment -name VERILOG_FILE sound_sample.v
+set_global_assignment -name VERILOG_FILE Sin_Generator.v
+set_global_assignment -name VERILOG_FILE I2C_Audio_Config.v
+set_global_assignment -name VERILOG_FILE I2C_Controller.v
+set_global_assignment -name VERILOG_FILE clkgen.v
+set_global_assignment -name VERILOG_FILE I2S_Audio.v
+set_location_assignment PIN_AF30 -to AUD_BCLK
+set_location_assignment PIN_AF29 -to AUD_DACDAT
+set_location_assignment PIN_AG30 -to AUD_DACLRCK
+set_location_assignment PIN_AH30 -to AUD_XCK
+set_location_assignment PIN_Y24 -to FPGA_I2C_SCLK
+set_location_assignment PIN_Y23 -to FPGA_I2C_SDAT
+set_location_assignment PIN_AG25 -to LEDR[0]
+set_location_assignment PIN_AF25 -to LEDR[1]
+set_location_assignment PIN_AE24 -to LEDR[2]
+set_location_assignment PIN_AF24 -to LEDR[3]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
